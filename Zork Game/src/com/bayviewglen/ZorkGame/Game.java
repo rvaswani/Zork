@@ -153,6 +153,8 @@ class Game
         String commandWord = command.getCommandWord();
         if (commandWord.equals("help"))
             printHelp();
+        else if(commandWord.equals("realHelp"))
+        	printRealHelp();
         else if (commandWord.equals("go"))
             goRoom(command);
         else if (commandWord.equals("quit"))
@@ -167,7 +169,16 @@ class Game
         return false;
     }
 
-    // implementations of user commands:
+    private void printRealHelp() {
+		System.out.println("\nYou are stuck in a world with 20 challenging levels.  ");
+		System.out.println("You have several difference commands you can use to complete game:");
+		System.out.println(" 1. Go \n 2. Quit \n 3. Eat \n 4. Open");
+		System.out.println("Find your way to the final level and defeat the final boss. Good luck.");
+		System.out.println();
+		
+	}
+
+	// implementations of user commands:
 
     /**
      * Print out some help information.
@@ -176,11 +187,14 @@ class Game
      */
     private void printHelp() 
     {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at Monash Uni, Peninsula Campus.");
+        System.out.println("\nI am glad you asked for help, ");
+        System.out.println("the truth is, there is no way to win this game. You will be ");
+        System.out.println("given a false sense of hope, making you feel like you will win, but ");
+        System.out.println("once you get to the final round, there is no winning.");
+        System.out.println("\nGoodluck! :)");
         System.out.println();
-        System.out.println("Your command words are:");
-        parser.showCommands();
+        System.out.println("Now if you want real help, enter in \"real help\"");
+        
     }
 
     /** 
