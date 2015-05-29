@@ -50,6 +50,7 @@ class Room
     	case 'N': dir = "north";break;
     	case 'U': dir = "up";break;
     	case 'D': dir = "down";break;
+    	case 'O': dir = "open";break;
     	default: throw new Exception("Invalid Direction");
     	
     	}
@@ -61,20 +62,22 @@ class Room
      * Define the exits of this room.  Every direction either leads to
      * another room or is null (no exit there).
      */
-    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down) 
+    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down, Room open) 
     {
         if(north != null)
-            exits.put("north", north);
+            exits.put("North", north);
         if(east != null)
-            exits.put("east", east);
+            exits.put("East", east);
         if(south != null)
-            exits.put("south", south);
+            exits.put("South", south);
         if(west != null)
-            exits.put("west", west);
+            exits.put("West", west);
         if(up != null)
-            exits.put("up", up);
+            exits.put("Up", up);
         if(up != null)
-            exits.put("down", down);
+            exits.put("Down", down);
+        if (open != null)
+        	exits.put("Open", open);
         
     }
 
@@ -84,7 +87,7 @@ class Room
      */
     public String shortDescription()
     {
-        return "Room: " + roomName +"\n\n" + description;
+    	return "Room: " + roomName +"\n\n" + description;
     }
 
     /**
@@ -95,7 +98,7 @@ class Room
     public String longDescription()
     {
     	
-        return "Room: " + roomName +"\n\n" + description + "\n" + exitString();
+        return "Floor: " + roomName.split("\\.")[0].replaceAll("Room ", "") + "\n" + "Room: " + roomName.replaceAll("Room ", "") +"\n\n" + description + "\n" + exitString();
     }
  
     /**

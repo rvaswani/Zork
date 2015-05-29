@@ -3,7 +3,7 @@ Room Description:  You are in a hallway. In front of you lies a staircase.
 Exit Rooms: N-Room 1.2
 Room Name: Room 1.2
 Room Description: You need to fight the guard to go through the stairs
-Exit Rooms: N-Room 2.1
+Exit Rooms: U-Room 2.1
 Room Name: Room 2.1
 Room Description: Welcome to the second floor. You are in a hallway, with one door on the east. 
 Exit Rooms: E-Room 2.2
@@ -50,5 +50,90 @@ Room Name: Room 3.8
 Room Description:  There are his guards.
 Exit Rooms: N-Room 3.7
 Room Name: Room 3.9
-Room Description:  There is a guard and a staircase right behind him. (FIGHT)
+Room Description: There is a guard and a staircase right behind him. (FIGHT)
 Exit Rooms: U-Room 4.1, E-Room 3.7
+Room Name: Room 4.1
+Room Description: Welcome to the fourth floor. You are in a hallway with doors on the west and east side. There is one table and a mirror on the wall to the north of you.
+Exit Rooms: E-Room 4.2, W-Room 4.3
+Room Name: Room 4.2
+Room Description: This room looks like a kitchen. There is a dining table and a fridge in the room. There is one monster guarding the door on the north. There is another monster looking outside the window on the east. This monster looks special...
+Exit Rooms: N-Room 4.4, W-Room 4.1
+Room Name: Room 4.3
+Room Description: There is a big monster standing in the middle of the room. There is one door on the north, and another door on the west to a belcony.
+Exit Rooms: W-Room 4.8, N-Room 4.7, E-Room 4.1
+Room Name: Room 4.4
+Room Description: This is a room with nothing in it but a monster standing in the middle. There are doors on the north, west, and east side of the room. 
+Exit Rooms: N-Room 4.91, W-Room 4.6, E-Room 4.5, S-Room 4.2
+Room Name: Room 4.5
+Room Description: This is a room with another monster in it. There is a door on the north side. 
+Exit Rooms: N-Room 4.9, W-Room 4.4
+Room Name: Room 4.6
+Room Description: THis is a big room with one monster standing in the middle. This monster looks weak...
+Exit Rooms: E-Room 4.4
+Room Name: Room 4.7
+Room Description: This is a room with a window on the left. There is one monster standing on the side and guarding something behind him...
+Exit Rooms: S-Room 4.7
+Room Name: Room 4.8
+Room Description: This is the balcony. You can see the blue sky and the sun and feel the chilling wind. There is a note on the ground. There are two windows on the wall of the building. One of them is very small, and one of them is big and looks brittle...
+Exit Rooms: E-Room 4.3, (Break the window)-Room 4.93
+Room Name: Room 4.9
+Room Description: There is one big monster guarding a key. Nothing else is in the room. The monster looks creepy...
+Exit Rooms: S-Room 4.9
+Room Name: Room 4.91
+Room Description: This is a big room, but there is only one small monster in it. There is a window on the wall. There is also a door on the west, but it seems like it requires a key in order to unlock the door.
+Exit Rooms: S-Room 4.4, W-Room 4.94 (Requires key)
+Room Name: Room 4.92
+Room Description: Great job breaking the window! You entered this room with nothing but gold pieces on the ground. There is one door on the east.
+Exit Rooms: W-Room 4.8, E-Room 4.93
+Room Name: Room 4.93
+Room Description: !!! There are 4 monsters in the room. They all look very aggressive. However, there is something shiny behind them...
+Exit Rooms: W-Room 4.92
+Room Name: Room 4.94
+Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next level.
+Exit Rooms: U-Room 5.1
+Room Name: Room 5.1
+Room Description:  You are currently in the beginning of the fifth floor corridor.
+Exit Rooms: E-Room 5.2, N-Room 5.3
+Room Name: Room 3.2
+Room Description: There is a desk (OPTION TO CHECK)
+Exit Rooms: W-Room 5.1
+Room Name: Room 5.3
+Room Description: There is two hallways, one on your right and one of your left. There is also a locked room in front of you. 
+Exit Rooms: W-Room 5.4, E-Room 5.12, O-Room 5.11, S-Room 5.1
+Room Name: Room 5.4
+Room Description:  You are currently in the left-wing corridor. Two doors on the left.
+Exit Rooms: S-Room 5.5, W-Room 5.6, E-Room 5.3
+Room Name: Room 5.5
+Room Description:  There are two guards in the room
+Exit Rooms: N-Room 5.4
+Room Name: Room 5.6
+Room Description:  There is a door to your left and a hallway to your right.
+Exit Rooms: S-Room 5.7, N-Room 5.8, E-Room 5.4
+Room Name: Room 5.7
+Room Description:  You found a key!
+Exit Rooms: N-Room 5.4
+Room Name: Room 5.8
+Room Description:  There is a door in front of you. Enter at your own risk.
+Exit Rooms: O-Room 5.9, S-Room 5.6
+Room Name: Room 5.9
+Room Description:  There are two guards in the room.
+Exit Rooms: N-Room 5.10, S-Room 5.8
+Room Name: Room 5.10
+Room Description:  There is a staircase in front of you
+Exit Rooms: U-Room 6.1
+Room Name: Room 5.11
+Room Description:  Find the keys to unlock the door.
+Exit Rooms: W-Room 5.4, E-Room 5.12
+Room Name: Room 5.12
+Room Description: There are no doors here. But there is a hallway to your left.
+Exit Rooms: W-Room 5.4, N-Room 5.13
+Room Name: Room 5.13
+Room Description:  There is a door nearby.
+Exit Rooms: W-Room 5.14, S-Room 5.12, N-Room 5.15
+Room Name: Room 5.14
+Room Description:  There is a guard (FIGHT)
+Exit Rooms: E-Room 5.13
+Room Name: Room 5.15
+Room Description:  You have reached a dead end.
+Exit Rooms: S-Room 5.13
+
