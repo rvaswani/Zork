@@ -26,56 +26,29 @@ Room Name: Room 2.7
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next level.
 Exit Rooms: U-Room 3.1
 Room Name: Room 3.1
-Room Description:  Welcome to the third floor.
+Room Description:  Welcome to the third floor hallway.
 Exit Rooms: W-Room 3.2, N-Room 3.3
 Room Name: Room 3.2
 Room Description: This room is empty
 Exit Rooms: S-Room 3.1
 Room Name: Room 3.3
-Room Description: You are further down the hallway.
+Room Description: You are still in the hallway...
 Exit Rooms: E-Room 3.4, S-Room 3.1
 Room Name: Room 3.4
-Room Description:  Still in the hallway...
-Exit Rooms: E-Room 3.5, 
-Room Name: Room 7
-Room Description:  This is room<br>1
-Exit Rooms: E-Room 2
-Room Name: Room 8
-Room Description:  This is Room 9
-Exit Rooms: W-Room 1, U-Room 3
-Room Name: Room 9
-Room Description:  You are upstairs.
-Exit Rooms: D-Room 2
-Room Name: Room 10
-Room Description:  This is room<br>1
-Exit Rooms: E-Room 2
-Room Name: Room 11
-Room Description:  This is Room 0
-Exit Rooms: W-Room 1, U-Room 3
-Room Name: Room 12
-Room Description:  You are upstairs.
-Exit Rooms: D-Room 2
-Room Name: Room 13
-Room Description:  This is room<br>4
-Exit Rooms: E-Room 14
-Room Name: Room 10
-Room Description:  This is Room 49
-Exit Rooms: W-Room 1, U-Room 3
-Room Name: Room 15
-Room Description:  You are upstairs.
-Exit Rooms: D-Room 2
-Room Name: Room 16
-Room Description:  This is room<br>94
-Exit Rooms: E-Room 2
-Room Name: Room 17
-Room Description:  This is Room 39
-Exit Rooms: W-Room 1, U-Room 3
-Room Name: Room 18
-Room Description:  You are upstairs.
-Exit Rooms: D-Room 2
-Room Name: Room 19
-Room Description:  This is room<br>29
-Exit Rooms: E-Room 2
-Room Name: Room 20
-Room Description:  This is Room 294
-Exit Rooms: W-Room 1, U-Room 3
+Room Description:  In the hallway...
+Exit Rooms: S-Room 3.5, N-Room 3.6, W-3.3
+Room Name: Room 3.5
+Room Description:  (THIS ROOM HAS A TREASURE BOX)
+Exit Rooms: N-Room 3.4
+Room Name: Room 3.6
+Room Description:  You are near the end of the hallway, closer to the stairs.
+Exit Rooms: W-Room 3.7, S-Room 3.4
+Room Name: Room 3.7
+Room Description:  There are two doors adjacent to you.
+Exit Rooms: S-Room 3.8, W-Room 3.9, E-Room 3.6
+Room Name: Room 3.8
+Room Description:  There are his guards.
+Exit Rooms: N-Room 3.7
+Room Name: Room 3.9
+Room Description:  There is a guard and a staircase right behind him. (FIGHT)
+Exit Rooms: U-Room 4.1, E-Room 3.7
