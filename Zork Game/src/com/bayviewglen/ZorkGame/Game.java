@@ -90,7 +90,7 @@ class Game
     }    
 
     /**
-     * Create the game and initialise its internal map.
+     * Create the game and initialize its internal map.
      */
     public Game() {
         try {

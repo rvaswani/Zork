@@ -1,21 +1,42 @@
-Room Name: Room 1
-Room Description:  You are in a hallway. In front of you lies a staircase. 
-Exit Rooms: N-Room 1.1
 Room Name: Room 1.1
+Room Description:  You are in a hallway. In front of you lies a staircase. 
+Exit Rooms: N-Room 1.2
+Room Name: Room 1.2
 Room Description: You need to fight the guard to go through the stairs
-Exit Rooms: W-Room 1, N-Room 3
+Exit Rooms: N-Room 2.1
+Room Name: Room 2.1
+Room Description: Welcome to the second floor. You are in a hallway, with one door on the east. 
+Exit Rooms: E-Room 2.2
+Room Name: Room 2.2
+Room Description: This is a dark empty room with doors on the north and south. There is one monster standing right in front of you. Seems like it is guarding the doors... 
+Exit Rooms: S-Room 2.3, N-Room 2.4
+Room Name: Room 2.3
+Room Description: This is another dark room with nothing but a pile of gold on the ground. 
+Exit Rooms: N-Room 2.2
+Room Name: Room 2.4
+Room Description: This is a huge room. There is a grand piano and a window. 
+Exit Rooms: W-Room 2.5
+Room Name: Room 2.5
+Room Description: There is nothing except a monster guarding the doors again. There is one door on the west and one door on the south.
+Exit Rooms: S-Room 2.6, W-Room 2.7
+Room Name: Room 2.6
+Room Description: There is one monster standing right in front of you. However, there is a person behind the monster. Seems like he is trapped here by the monster.
+Exit Rooms: N-Room 2.5
+Room Name: Room 2.7
+Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next level.
+Exit Rooms: U-Room 3.1
 Room Name: Room 3.1
-Room Description:  There is a staircase leading up or down.
-Exit Rooms: D-Room 4, U-Room5
-Room Name: Room 4
-Room Description:  You are now in the basement
-Exit Rooms: N-Room 2, E-Room 2
-Room Name: Room 5
-Room Description:  You are in a hallway with 4 doors in front of you. Doors 1, 2, and 3 are locked.
-Exit Rooms: W-Room 1, U-Room 3 
-Room Name: Room 6
-Room Description:  You are upstairs.
-Exit Rooms: D-Room 2
+Room Description:  Welcome to the third floor.
+Exit Rooms: W-Room 3.2, N-Room 3.3
+Room Name: Room 3.2
+Room Description: This room is empty
+Exit Rooms: S-Room 3.1
+Room Name: Room 3.3
+Room Description: You are further down the hallway.
+Exit Rooms: E-Room 3.4, S-Room 3.1
+Room Name: Room 3.4
+Room Description:  Still in the hallway...
+Exit Rooms: E-Room 3.5, 
 Room Name: Room 7
 Room Description:  This is room<br>1
 Exit Rooms: E-Room 2
