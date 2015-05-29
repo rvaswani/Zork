@@ -3,19 +3,19 @@ Room Description:  You are in a hallway. In front of you lies a staircase.
 Exit Rooms: N-Room 1.2
 Room Name: Room 1.2
 Room Description: You need to fight the guard to go through the stairs
-Exit Rooms: N-Room 3
-Room Name: Room 3
-Room Description:  You are in a hallway.
-Exit Rooms: D-Room 4, U-Room5
-Room Name: Room 4
-Room Description:  You are now in the basement
-Exit Rooms: N-Room 2, E-Room 2
-Room Name: Room 5
-Room Description:  You are in a hallway with 4 doors in front of you. Doors 1, 2, and 3 are locked.
-Exit Rooms: W-Room 1, U-Room 3 
-Room Name: Room 6
-Room Description:  You are upstairs.
-Exit Rooms: D-Room 2
+Exit Rooms: N-Room 2.1
+Room Name: Room 3.1
+Room Description:  Welcome to the third floor.
+Exit Rooms: W-Room 3.2, N-Room 3.3
+Room Name: Room 3.2
+Room Description: This room is empty
+Exit Rooms: S-Room 3.1
+Room Name: Room 3.3
+Room Description: You are further down the hallway.
+Exit Rooms: E-Room 3.4, S-Room 3.1
+Room Name: Room 3.4
+Room Description:  Still in the hallway...
+Exit Rooms: E-Room 3.5, 
 Room Name: Room 7
 Room Description:  This is room<br>1
 Exit Rooms: E-Room 2
