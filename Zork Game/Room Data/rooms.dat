@@ -24,7 +24,7 @@ Room Description: There is one monster standing right in front of you. However, 
 Exit Rooms: N-Room 2.5
 Room Name: Room 2.7
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next level.
-Exit Rooms: U-Room 3.1
+Exit Rooms: U-Room 3.1, E-Room 2.5
 Room Name: Room 3.1
 Room Description:  Welcome to the third floor hallway.
 Exit Rooms: W-Room 3.2, N-Room 3.3
@@ -50,8 +50,13 @@ Room Name: Room 3.8
 Room Description:  There are his guards.
 Exit Rooms: N-Room 3.7
 Room Name: Room 3.9
+<<<<<<< HEAD
 Room Description: There is a guard and a staircase right behind him. (FIGHT)
 Exit Rooms: U-Room 4.1, E-Room 3.7
+=======
+Room Description:  There is a guard and a staircase right behind him. (FIGHT)
+Exit Rooms: U-Room 4.1, E-Room 3.7
+>>>>>>> origin/master
 Room Name: Room 4.1
 Room Description: Welcome to the fourth floor. You are in a hallway with doors on the west and east side. There is one table and a mirror on the wall to the north of you.
 Exit Rooms: E-Room 4.2, W-Room 4.3
@@ -90,6 +95,7 @@ Room Description: !!! There are 4 monsters in the room. They all look very aggre
 Exit Rooms: W-Room 4.92
 Room Name: Room 4.94
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next level.
+<<<<<<< HEAD
 Exit Rooms: U-Room 5.1
 Room Name: Room 5.1
 Room Description:  You are currently in the beginning of the fifth floor corridor.
@@ -137,3 +143,6 @@ Room Name: Room 5.15
 Room Description:  You have reached a dead end.
 Exit Rooms: S-Room 5.13
 
+=======
+Exit Rooms: U-Room 5.1
+>>>>>>> origin/master
