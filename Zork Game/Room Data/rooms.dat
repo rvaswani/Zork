@@ -24,7 +24,7 @@ Room Description: There is one monster standing right in front of you. However, 
 Exit Rooms: N-Room 2.5
 Room Name: Room 2.7
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next level.
-Exit Rooms: U-Room 3.1
+Exit Rooms: U-Room 3.1, E-Room 2.5
 Room Name: Room 3.1
 Room Description:  Welcome to the third floor hallway.
 Exit Rooms: W-Room 3.2, N-Room 3.3
@@ -52,3 +52,42 @@ Exit Rooms: N-Room 3.7
 Room Name: Room 3.9
 Room Description:  There is a guard and a staircase right behind him. (FIGHT)
 Exit Rooms: U-Room 4.1, E-Room 3.7
+Room Name: Room 4.1
+Room Description: Welcome to the fourth floor. You are in a hallway with doors on the west and east side. There is one table and a mirror on the wall to the north of you.
+Exit Rooms: E-Room 4.2, W-Room 4.3
+Room Name: Room 4.2
+Room Description: This room looks like a kitchen. There is a dining table and a fridge in the room. There is one monster guarding the door on the north. There is another monster looking outside the window on the east. This monster looks special...
+Exit Rooms: N-Room 4.4, W-Room 4.1
+Room Name: Room 4.3
+Room Description: There is a big monster standing in the middle of the room. There is one door on the north, and another door on the west to a belcony.
+Exit Rooms: W-Room 4.8, N-Room 4.7, E-Room 4.1
+Room Name: Room 4.4
+Room Description: This is a room with nothing in it but a monster standing in the middle. There are doors on the north, west, and east side of the room. 
+Exit Rooms: N-Room 4.91, W-Room 4.6, E-Room 4.5, S-Room 4.2
+Room Name: Room 4.5
+Room Description: This is a room with another monster in it. There is a door on the north side. 
+Exit Rooms: N-Room 4.9, W-Room 4.4
+Room Name: Room 4.6
+Room Description: THis is a big room with one monster standing in the middle. This monster looks weak...
+Exit Rooms: E-Room 4.4
+Room Name: Room 4.7
+Room Description: This is a room with a window on the left. There is one monster standing on the side and guarding something behind him...
+Exit Rooms: S-Room 4.7
+Room Name: Room 4.8
+Room Description: This is the balcony. You can see the blue sky and the sun and feel the chilling wind. There is a note on the ground. There are two windows on the wall of the building. One of them is very small, and one of them is big and looks brittle...
+Exit Rooms: E-Room 4.3, (Break the window)-Room 4.93
+Room Name: Room 4.9
+Room Description: There is one big monster guarding a key. Nothing else is in the room. The monster looks creepy...
+Exit Rooms: S-Room 4.9
+Room Name: Room 4.91
+Room Description: This is a big room, but there is only one small monster in it. There is a window on the wall. There is also a door on the west, but it seems like it requires a key in order to unlock the door.
+Exit Rooms: S-Room 4.4, W-Room 4.94 (Requires key)
+Room Name: Room 4.92
+Room Description: Great job breaking the window! You entered this room with nothing but gold pieces on the ground. There is one door on the east.
+Exit Rooms: W-Room 4.8, E-Room 4.93
+Room Name: Room 4.93
+Room Description: !!! There are 4 monsters in the room. They all look very aggressive. However, there is something shiny behind them...
+Exit Rooms: W-Room 4.92
+Room Name: Room 4.94
+Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next level.
+Exit Rooms: U-Room 5.1
