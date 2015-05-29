@@ -4,6 +4,7 @@ Exit Rooms: N-Room 1.2
 Room Name: Room 1.2
 Room Description: You need to fight the guard to go through the stairs
 Exit Rooms: N-Room 2.1
+<<<<<<< HEAD
 Room Name: Room 2.1
 Room Description: Welcome to the second floor. You are in a hallway, with one door on the east. 
 Exit Rooms: E-Room 2.2
@@ -25,6 +26,8 @@ Exit Rooms: N-Room 2.5
 Room Name: Room 2.7
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next level.
 Exit Rooms: U-Room 3.1
+=======
+>>>>>>> origin/master
 Room Name: Room 3.1
 Room Description:  Welcome to the third floor.
 Exit Rooms: W-Room 3.2, N-Room 3.3
