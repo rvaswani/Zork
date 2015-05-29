@@ -153,8 +153,6 @@ class Game
         String commandWord = command.getCommandWord();
         if (commandWord.equals("help"))
             printHelp();
-        else if(commandWord.equals("realHelp"))
-        	printRealHelp();
         else if (commandWord.equals("go"))
             goRoom(command);
         else if (commandWord.equals("quit"))
@@ -164,13 +162,12 @@ class Game
             else
                 return true;  // signal that we want to quit
         }else if (commandWord.equals("eat")){
-        	System.out.println("Do you really think you should be eating at a time like this?");
+        	System.out.println("Eating is for the weak?");
         }
         return false;
     }
 
-    private void printRealHelp() {
-		System.out.println("\nYou are stuck in a world with 20 challenging levels.  ");
+    private void printHelp() {
 		System.out.println("You have several difference commands you can use to complete game:");
 		System.out.println(" 1. Go \n 2. Quit \n 3. Eat \n 4. Open");
 		System.out.println("Find your way to the final level and defeat the final boss. Good luck.");
@@ -179,23 +176,6 @@ class Game
 	}
 
 	// implementations of user commands:
-
-    /**
-     * Print out some help information.
-     * Here we print some stupid, cryptic message and a list of the 
-     * command words.
-     */
-    private void printHelp() 
-    {
-        System.out.println("\nI am glad you asked for help, ");
-        System.out.println("the truth is, there is no way to win this game. You will be ");
-        System.out.println("given a false sense of hope, making you feel like you will win, but ");
-        System.out.println("once you get to the final round, there is no winning.");
-        System.out.println("\nGoodluck! :)");
-        System.out.println();
-        System.out.println("Now if you want real help, enter in \"real help\"");
-        
-    }
 
     /** 
      * Try to go to one direction. If there is an exit, enter the new
