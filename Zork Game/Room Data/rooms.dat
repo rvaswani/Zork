@@ -1,10 +1,10 @@
 Room Name: Room 1
-Room Description:  There is a door east and west of you.
-Exit Rooms: E-Room 2, W-Room 3
-Room Name: Room 2
-Room Description:  There is a treasure chest on a desk
+Room Description:  You are in a hallway. In front of you lies a staircase. 
+Exit Rooms: N-Room 1.1
+Room Name: Room 1.1
+Room Description: You need to fight the guard to go through the stairs
 Exit Rooms: W-Room 1, N-Room 3
-Room Name: Room 3
+Room Name: Room 3.1
 Room Description:  There is a staircase leading up or down.
 Exit Rooms: D-Room 4, U-Room5
 Room Name: Room 4
