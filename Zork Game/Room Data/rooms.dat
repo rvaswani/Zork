@@ -4,30 +4,27 @@ Exit Rooms: N-Room 1.2
 Room Name: Room 1.2
 Room Description: You need to fight the guard to go through the stairs
 Exit Rooms: N-Room 2.1
-<<<<<<< HEAD
 Room Name: Room 2.1
 Room Description: Welcome to the second floor. You are in a hallway, with one door on the east. 
 Exit Rooms: E-Room 2.2
 Room Name: Room 2.2
 Room Description: This is a dark empty room with doors on the north and south. There is one monster standing right in front of you. Seems like it is guarding the doors... 
-Exit Rooms: S-Room 2.3, N-Room 2.4
+Exit Rooms: S-Room 2.3, N-Room 2.4, W-Room 2.1
 Room Name: Room 2.3
 Room Description: This is another dark room with nothing but a pile of gold on the ground. 
 Exit Rooms: N-Room 2.2
 Room Name: Room 2.4
 Room Description: This is a huge room. There is a grand piano and a window. 
-Exit Rooms: W-Room 2.5
+Exit Rooms: W-Room 2.5, S-Room 2.2
 Room Name: Room 2.5
 Room Description: There is nothing except a monster guarding the doors again. There is one door on the west and one door on the south.
-Exit Rooms: S-Room 2.6, W-Room 2.7
+Exit Rooms: S-Room 2.6, W-Room 2.7, E-Room 2.4
 Room Name: Room 2.6
 Room Description: There is one monster standing right in front of you. However, there is a person behind the monster. Seems like he is trapped here by the monster.
 Exit Rooms: N-Room 2.5
 Room Name: Room 2.7
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next level.
 Exit Rooms: U-Room 3.1
-=======
->>>>>>> origin/master
 Room Name: Room 3.1
 Room Description:  Welcome to the third floor.
 Exit Rooms: W-Room 3.2, N-Room 3.3
