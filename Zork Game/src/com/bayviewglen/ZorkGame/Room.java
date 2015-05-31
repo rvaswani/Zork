@@ -81,7 +81,7 @@ class Room
             exits.put("Down", down);
         if (open != null)
         	exits.put("Open", open);
-        if (look !=null)
+        if (look != null)
         	exits.put("Look", look);
         if (Break != null)
         	exits.put("Break", Break);
