@@ -79,7 +79,7 @@ Room Description: This is a room with a window on the left. There is one monster
 Exit Rooms: S-Room 4.7
 Room Name: Room 4.8
 Room Description: This is the balcony. You can see the blue sky and the sun and feel the chilling wind. There is a note on the ground. There are two windows on the wall of the building. One of them is very small, and one of them is big and looks brittle...
-Exit Rooms: E-Room 4.3, (Break the window)-Room 4.12
+Exit Rooms: E-Room 4.3, N-Room 4.12
 Room Name: Room 4.9
 Room Description: There is one big monster guarding a key. Nothing else is in the room. The monster looks creepy...
 Exit Rooms: S-Room 4.9
@@ -88,7 +88,7 @@ Room Description: This is a big room, but there is only one small monster in it.
 Exit Rooms: S-Room 4.4, W-Room 4.13 (Requires key)
 Room Name: Room 4.11
 Room Description: Great job breaking the window! You entered this room with nothing but gold pieces on the ground. There is one door on the east.
-Exit Rooms: W-Room 4.8, E-Room 4.12
+Exit Rooms: S-Room 4.8, E-Room 4.12
 Room Name: Room 4.12
 Room Description: !!! There are 4 monsters in the room. They all look very aggressive. However, there is something shiny behind them...
 Exit Rooms: W-Room 4.11
