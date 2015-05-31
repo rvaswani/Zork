@@ -51,6 +51,10 @@ Room Description:  There are his guards.
 Exit Rooms: N-Room 3.7
 Room Name: Room 3.9
 Room Description: There is a guard and a staircase right behind him. (FIGHT)
+Room Name: Room 3.9
+Room Description: There is a guard and a staircase right behind him. (FIGHT)
+Exit Rooms: U-Room 4.1, E-Room 3.7
+Room Description:  There is a guard and a staircase right behind him. (FIGHT)
 Exit Rooms: U-Room 4.1, E-Room 3.7
 Room Name: Room 4.1
 Room Description: Welcome to the fourth floor. You are in a hallway with doors on the west and east side. There is one table and a mirror on the wall to the north of you.
@@ -90,6 +94,9 @@ Room Description: !!! There are 4 monsters in the room. They all look very aggre
 Exit Rooms: W-Room 4.11
 Room Name: Room 4.13
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next floor.
+Exit Rooms: W-Room 4.12
+Room Name: Room 4.13
+Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next level.
 Exit Rooms: U-Room 5.1
 Room Name: Room 5.1
 Room Description:  You are currently in the beginning of the fifth floor corridor.
@@ -136,10 +143,10 @@ Exit Rooms: E-Room 5.13
 Room Name: Room 5.15
 Room Description:  You have reached a dead end.
 Exit Rooms: S-Room 5.13
-Room Name: 6.1
+Room Name: Room 6.1
 Room Description: Welcome to the sixth floor. There are two doors, one on the west side and the other on the east side.
 Exit Rooms: W-Room 6.5, E-Room 6.2
-Room Name: 6.2
+Room Name: Room 6.2
 Room Description: This is an empty room with nothing but a monster in the middle... One door on the east.
 Exit Rooms: E-Room 6.3, W-Room 6.1
 Room Name: Room 6.3
@@ -233,4 +240,61 @@ Room Description: Another monster!
 Exit Rooms: E-Room 8.16, W-Room 8.14
 Room Name: Room 8.16
 Room Description: Sorry, you have entered the trap room. You see a thousand arrows coming at you at the same time. You died...
+Exit Rooms:
+
+
+
+Room Name: Room 10.1
+Room Description: Welcome to the tenth floor. This if the final floor! Find the keys to unlock powerful items and beat the final boss of the game! There are three doors in front of you in the direction of west, north, and east. All monsters in this level reset after you leave a room.
+Exit Rooms: W-Room 10.2, N-Room 10.8, E-Room 10.6
+Room Name: Room 10.2
+Room Description: This is an empty room with a sign next to the door on the west. The sign says: Once you pass through this door, you cannot go back. You either finish all the rooms in this path, or you die trying. Enjoy!
+Exit Rooms: W-Room 10.3, E-Room 10.1
+Room Name: Room 10.3
+Room Description: After passing through the door, you found that you are no long in a room setting. You are in a cemetery. You can see crosses everywhere. A huge blood moon is on the sky...It is very scary, but you know you have to pass through to get to the next door on the west. 
+Exit Rooms: W-Room 10.4
+Room Name: Room 10.4
+Room Description: You entered an arena. You will fight 10 rounds of monsters, and will be rewarded gold determined by the amount of levels that you can complete. If you die, you will be rewarded gold but teleport back to the beginning of the floor.
+Exit Rooms: W-10.5
+Room Name: Room 10.5
+Room Description: Congratulations! You have reached the end of this path. There are gold and potions on the ground. Also, a small key labelled "1" will now be rewarded to you. Enter any direction and you will go back to the beginning of the floor.
+Exit Rooms: N-Room 10.1, S-Room 10.1, E-Room 10.1, W-Room 10.1
+Room Name: Room 10.6
+Room Description: This is an empty room with a sign next to the door on the east. The sign says: Once you pass through this door, you cannot go back. You either finish all the rooms in this path, or you die trying. Enjoy!
+Exit Rooms: W-Room 10.1, E-Room 10.7
+Room Name: Room 10.7
+Room Description: After passing through the door, you found that you are no longer in a room setting. You are in a desert. You can see nothing but sand, and the bright red sun on top of you. It definitely is hot and exhausting, but you know you ahve to pass through to get to the next door on the east.
+Exit Rooms: E-Room 10.8
+Room Name: Room 10.8
+Room Description: Behind the door you just passed through, there is still endless sand and the bright hot sun. However, you see a Sphinx in front of you. Answer its 10 questions correctly to get to the next room!
+Exit Rooms: E-Room 10.9
+Room Name: Room 10.9
+Room Description: Congratulations! You have reached the end of this path. There are gold and potions on the ground. Also, a small key labelled "2" will be rewarded to you. Enter any direction and you will go back to the beginning of the floor.
+Exit Rooms: N-Room 10.1, S-Room 10.1, E-Room 10.1, W-Room 10.1
+Room Name: Room 10.10
+Room Description: After passing through the door, you found that you are no longer in a room setting. There is a small river right in front of you, you got on the boat and travel downstream with the water, hoping to reach the door on the north safely...
+Exit Rooms: N-Room 10.11
+Room Name: Room 10.11
+Room Description: You came to a bright hall. You can see the ornate decorations on the wall. You see small doors labelled "1" - "6" on the side, but you know you need some sort of a key to open them. On the far north, you can see another huge door that requires a big key. You can feel the power behind it. That's it...The final boss room. (Use the keys to unlock side doors)
+Exit Rooms: N-room 10.18
+Room Name: Room 10.12
+Room Description: There is a shiny sword on the ground. It looks gorgeous and powerful. Pick it up! Also, there is a small key labelled "3" lying on the side.
+Exit Rooms: N-Room 10.11, S-Room 10.11, E-Room 10.11, W-Room 10.11 (Replace with "Back-Room 10.11)
+Room Name: Room 10.13
+Room Description: There is a thick yet aesthetically beautiful armor on the ground. Pick it up! Also, there is a small key labelled "4" lying on the side.
+Exit Rooms: N-Room 10.11, S-Room 10.11, E-Room 10.11, W-Room 10.11 (Replace with "Back-Room 10.11)
+Room Name: Room 10.14
+Room Description: There is a pair of boots made of shiny golden feathers. It looks so cool! Pick it up! There is nothing else in the room... Use other small keys to unlock other doors!
+Exit Rooms: N-Room 10.11, S-Room 10.11, E-Room 10.11, W-Room 10.11 (Replace with "Back-Room 10.11)
+Room Name: 10.15
+Room Description: There is a huge shield on the ground. It makes you feel unstoppable and invulnerable, pick it up! There is also a small key labelled "5" on the side.
+Exit Rooms: N-Room 10.11, S-Room 10.11, E-Room 10.11, W-Room 10.11 (Replace with "Back-Room 10.11)
+Room Name: 10.16
+Room Description: There is a helmet on the ground. It looks like it will protect your head from any sort of damage. Pick it up! You will get the key with label "6" as soon as you collect all other keys.
+Exit Rooms: N-Room 10.11, S-Room 10.11, E-Room 10.11, W-Room 10.11 (Replace with "Back-Room 10.11)
+Room Name: 10.17
+Room Description: There are potions on the ground. you knew what is going to be in this room. The shiny, golden key that leads to the final boss room. You have waited for this day for so long. Your heart is beating faster, you feel the power within your body. Its time...to challenge the final boss!
+Exit Rooms: N-Room 10.11, S-Room 10.11, E-Room 10.11, W-Room 10.11 (Replace with "Back-Room 10.11)
+Room Name: 10.18
+Room Description: Here you are...with the final boss right in front of you, sitting on the golden throne. You are shocked to see his face. \n"Mr.DesLauriers?!"\n"Hahahaha..Come at me with all your might. But i can crush you with my pinky finger."\nHere comes the FINAL BATTLE!!! 
 Exit Rooms:

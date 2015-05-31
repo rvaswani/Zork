@@ -44,12 +44,16 @@ class Room
     public void setExit(char direction, Room r) throws Exception{
     	String dir= "";
     	switch (direction){
-    	case 'E': dir = "east";break;
-    	case 'W': dir = "west";break;
-    	case 'S': dir = "south";break;
-    	case 'N': dir = "north";break;
-    	case 'U': dir = "up";break;
-    	case 'D': dir = "down";break;
+    	case 'E': dir = "East";break;
+    	case 'W': dir = "West";break;
+    	case 'S': dir = "South";break;
+    	case 'N': dir = "North";break;
+    	case 'U': dir = "Up";break;
+    	case 'D': dir = "Down";break;
+    	case 'O': dir = "Open";break;
+    	case 'L': dir = "Look";break;
+    	case 'B': dir = "Break it";break;
+    	case 'R': dir = "Read";break;
     	default: throw new Exception("Invalid Direction");
     	
     	}
@@ -61,21 +65,28 @@ class Room
      * Define the exits of this room.  Every direction either leads to
      * another room or is null (no exit there).
      */
-    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down) 
+    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down, Room open, Room look, Room Break, Room read) 
     {
         if(north != null)
-            exits.put("north", north);
+            exits.put("North", north);
         if(east != null)
-            exits.put("east", east);
+            exits.put("East", east);
         if(south != null)
-            exits.put("south", south);
+            exits.put("South", south);
         if(west != null)
-            exits.put("west", west);
+            exits.put("West", west);
         if(up != null)
-            exits.put("up", up);
+            exits.put("Up", up);
         if(up != null)
-            exits.put("down", down);
-        
+            exits.put("Down", down);
+        if (open != null)
+        	exits.put("Open", open);
+        if (look !=null)
+        	exits.put("Look", look);
+        if (Break != null)
+        	exits.put("Break", Break);
+        if (read != null)
+        	exits.put("read", read);
     }
 
     /**
@@ -84,7 +95,7 @@ class Room
      */
     public String shortDescription()
     {
-        return "Room: " + roomName +"\n\n" + description;
+    	return "Room: " + roomName +"\n\n" + description;
     }
 
     /**
@@ -94,8 +105,8 @@ class Room
      */
     public String longDescription()
     {
-    	
-        return "Room: " + roomName +"\n\n" + description + "\n" + exitString();
+    	System.out.println("____________________________________________________________________________________________________________________");
+        return "\nFloor: " + roomName.split("\\.")[0].replaceAll("Room ", "") + "\n" + "Room: " + roomName.replaceAll("Room ", "") +"\n\n" + description + "\n" + exitString();
     }
  
     /**

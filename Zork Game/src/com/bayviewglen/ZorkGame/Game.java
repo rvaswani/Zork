@@ -168,8 +168,9 @@ class Game
     }
 
     private void printHelp() {
-		System.out.println("You have several difference commands you can use to complete game:");
-		System.out.println(" 1. Go \n 2. Quit \n 3. Eat \n 4. Open");
+		System.out.println("\nYou have several difference commands you can use to complete game:");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("1. Go + \n   a. North  \n   b. South  \n   c. East  \n   d. West  \n   e. Up  \n   f. Down  \n   g. Open  \n   h. Look  \n   i. Break  \n   j. Read  \n2. Quit\n");
 		System.out.println("Find your way to the final level and defeat the final boss. Good luck.");
 		System.out.println();
 		
@@ -196,7 +197,7 @@ class Game
         Room nextRoom = currentRoom.nextRoom(direction);
 
         if (nextRoom == null)
-            System.out.println("There is no door!");
+            System.out.println("There is nothing here! Search somewhere else.");
         else 
         {
             currentRoom = nextRoom;
