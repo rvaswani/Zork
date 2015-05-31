@@ -85,7 +85,7 @@ Room Description: There is one big monster guarding a key. Nothing else is in th
 Exit Rooms: S-Room 4.9
 Room Name: Room 4.10
 Room Description: This is a big room, but there is only one small monster in it. There is a window on the wall. There is also a door on the west, but it seems like it requires a key in order to unlock the door.
-Exit Rooms: S-Room 4.4, W-Room 4.13 (Requires key)
+Exit Rooms: S-Room 4.4, W-Room 4.13 
 Room Name: Room 4.11
 Room Description: Great job breaking the window! You entered this room with nothing but gold pieces on the ground. There is one door on the east.
 Exit Rooms: S-Room 4.8, E-Room 4.12
@@ -283,7 +283,7 @@ Room Description: Another monster!
 Exit Rooms: E-Room 8.16, W-Room 8.14
 Room Name: Room 8.16
 Room Description: Sorry, you have entered the trap room. You see a thousand arrows coming at you at the same time. You died...
-Exit Rooms:
+Exit Rooms: U-Room 00
 Room Name: Room 9.1
 Room Description: Welcome to the ninth floor... One more floor away... Keep Fighting!!!
 Exit Rooms: W-Room 9.2, E-Room 9.3
@@ -454,4 +454,4 @@ Room Description: There are potions on the ground. you knew what is going to be 
 Exit Rooms: N-Room 10.11, S-Room 10.11, E-Room 10.11, W-Room 10.11 (Replace with "Back-Room 10.11)
 Room Name: 10.18
 Room Description: Here you are...with the final boss right in front of you, sitting on the golden throne. You are shocked to see his face. \n"Mr.DesLauriers?!"\n"Hahahaha..Come at me with all your might. But i can crush you with my pinky finger."\nHere comes the FINAL BATTLE!!! 
-Exit Rooms:
+Exit Rooms: U-Room 00
