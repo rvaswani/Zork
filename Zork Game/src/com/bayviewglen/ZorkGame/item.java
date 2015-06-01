@@ -1,6 +1,6 @@
 package com.bayviewglen.ZorkGame;
 
-public class Monster {
+public class item {
 	private String name;
 	private double hitPoint;
 	private double attackDamage;
@@ -9,18 +9,37 @@ public class Monster {
 	private double critChance;
 	private double armor;
 	private double movementSpeed;
-	private int exp;
-	private String description;
+	private String specialAbility;
 	private int goldValue;
+	private String description;
+	private int weight;
 	
-	public Monster(){
+	public item()	{
 		
 	}
 	
-	// Constructor for monster objects
-	public Monster(String name, double hitPoint, double attackDamage,
+	// Constructor for items that are not equipment (Notes, keys, etc)
+	public item(String name, String description, int goldValue, int weight){
+		this.name = name;
+		this.description = description;
+		this.goldValue = goldValue;
+		this.weight = weight;
+		hitPoint = 0;
+		attackDamage = 0;
+		armorPenetration = 0;
+		lifeSteal = 0;
+		critChance = 0;
+		armor = 0;
+		movementSpeed = 0;
+		specialAbility = "";
+	}
+
+	
+	// Constructor for equipment type items (Swords, armor, etc)
+	public item(String name, double hitPoint, double attackDamage,
 			double armorPenetration, double lifeSteal, double critChance,
-			double armor, double movementSpeed, int exp, String description, int goldValue) {
+			double armor, double movementSpeed, String specialAbility, 
+			int goldValue, String description, int weight) {
 		super();
 		this.name = name;
 		this.hitPoint = hitPoint;
@@ -30,64 +49,62 @@ public class Monster {
 		this.critChance = critChance;
 		this.armor = armor;
 		this.movementSpeed = movementSpeed;
-		this.exp = ((int)(Math.random() * 21) - 10) + exp;	// Randomize the exp gained after killing each monster.
-		this.description = description;
+		this.specialAbility = specialAbility;
 		this.goldValue = goldValue;
+		this.description = description;
+		this.weight = weight;
 	}
 
 	
-	// Various getters. Note that there is no setter because values are not supposed to be changed for a monster.
+	// Various getters. Note that there is no setter because the stats of an item is not supposed to be changed.
 	
 	public String getName() {
 		return name;
 	}
 
-
 	public double getHitPoint() {
 		return hitPoint;
 	}
-
 
 	public double getAttackDamage() {
 		return attackDamage;
 	}
 
-
 	public double getArmorPenetration() {
 		return armorPenetration;
 	}
-
 
 	public double getLifeSteal() {
 		return lifeSteal;
 	}
 
-
 	public double getCritChance() {
 		return critChance;
 	}
-
 
 	public double getArmor() {
 		return armor;
 	}
 
-
 	public double getMovementSpeed() {
 		return movementSpeed;
 	}
-	
-	
-	public int getExp()	{
-		return exp;
-	}
 
-
-	public String getDescription() {
-		return description;
+	public String getSpecialAbility() {
+		return specialAbility;
 	}
 	
 	public int getGoldValue() {
 		return goldValue;
 	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+	
+	
 }
