@@ -48,6 +48,9 @@ class Game
 				// Read the Description
 				String roomDescription = roomScanner.nextLine();
 				room.setDescription(roomDescription.split(":")[1].replaceAll("<br>", "\n").trim());
+				// Read the amount of Monsters in this room
+				int monsterCount = Integer.parseInt(roomScanner.nextLine().split(":")[1].trim());
+				room.setMonsterCount(monsterCount);
 				// Read the Exits
 				String roomExits = roomScanner.nextLine();
 				// An array of strings in the format E-RoomName
@@ -124,6 +127,7 @@ class Game
         System.out.println("Thank you for playing.  Good bye.");
     }
 
+    
     /**
      * Print out the opening message for the player.
      */

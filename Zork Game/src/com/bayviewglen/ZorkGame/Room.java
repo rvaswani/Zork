@@ -22,6 +22,7 @@ class Room
 {
 	private String roomName;
     private String description;
+    private int monsterCount;					// Stores the amount of monsters in this room
     private HashMap<String, Room> exits;        // stores exits of this room.
 
     /**
@@ -38,6 +39,7 @@ class Room
 		// default constructor.
     	roomName = "DEFAULT ROOM";
     	description = "DEFAULT DESCRIPTION";
+    	monsterCount = 0;
     	exits = new HashMap<String, Room>();
 	}
 
@@ -106,7 +108,7 @@ class Room
     public String longDescription()
     {
     	System.out.println("____________________________________________________________________________________________________________________");
-        return "\nFloor: " + roomName.split("\\.")[0].replaceAll("Room ", "") + "\n" + "Room: " + roomName.replaceAll("Room ", "") +"\n\n" + description + "\n" + exitString();
+        return "\nFloor: " + roomName.split("\\.")[0].replaceAll("Room ", "") + "\n" + "Room: " + roomName.replaceAll("Room ", "") + "\n" + "# of Monsters in this room: " + monsterCount + "\n" + exitString() + "\n\n" + description + "\n";
     }
  
     /**
@@ -145,5 +147,13 @@ class Room
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public int getMonsterCount() {
+		return monsterCount;
+	}
+	
+	public void setMonsterCount(int monsterCount) {
+		this.monsterCount = monsterCount;
 	}
 }
