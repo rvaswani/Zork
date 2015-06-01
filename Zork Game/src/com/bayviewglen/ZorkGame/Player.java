@@ -20,6 +20,7 @@ public class Player {
 	private int wallet;
 	private String description;
 	private HashMap<String, item> inventory;
+	private int inventorySpace;
 	private static double levelUpIndex = 1.2;
 	
 	
@@ -71,20 +72,21 @@ public class Player {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Please enter your name: ");
 		name = input.nextLine();
-		maxHitPoint = 0;
-		hitPoint = 0;
-		attackDamage = 0;
+		maxHitPoint = 100;
+		hitPoint = maxHitPoint;
+		attackDamage = 20;
 		armorPenetration = 0;
 		lifeSteal = 0;
-		critChance = 0;
-		armor = 0;
-		movementSpeed = 0;
+		critChance = 0.01;
+		armor = 20;
+		movementSpeed = 100;
 		specialAbility = "";
 		level = 1;
 		exp = 0;
-		wallet = 0;
+		wallet = 100;
 		description = "";
 		inventory = new HashMap<String, item>();
+		inventorySpace = 20;
 		
 		input.close();
 	}
@@ -229,6 +231,23 @@ public class Player {
 	}
 	
 	
+	// Various methods that interact with the player
+	
+	// Check stats
+	public void checkStats() {
+		System.out.println("Character Type: " + choice);
+		System.out.println("Level: " + level);
+		System.out.println("Exp: " + exp + "/" + level * 100);
+		System.out.println("You have " + wallet + "gold.");
+		System.out.println("/nHP: " + hitPoint + "/" + maxHitPoint);
+		System.out.println("Armor Penetration: " + armorPenetration + "%");
+		System.out.println("Life Steal: " + lifeSteal + "%");
+		System.out.println("Crit. Chance: " + critChance + "%");
+		System.out.println("Armor: " + armor);
+		System.out.println("Movement Speed: " + movementSpeed);
+		System.out.println(specialAbility);
+	}
+	
 	// Level up 
 	public void levelUp() {
 		maxHitPoint *= levelUpIndex;
@@ -239,6 +258,46 @@ public class Player {
 		exp =- level * 10;
 		wallet += 100;
 		level += 1;
+	}
+	
+	// Obtain an item with specified amount
+	public void addItem(item i, int n) {
+		inventorySpace -= n;
+		if (inventory.containsKey(i.getName())) {
+			inventory.get(i.getName()).addAmount(n);
+		}else{
+			inventory.put(i.getName(), i);
+			inventory.get(i.getName()).addAmount(n - 1);
+		}
+	}
+	
+	// Use an item with specified amount. This method is specifically for items like potions and keys
+	public void useItem(item i, int n) {
+		inventorySpace += n;
+		if (!inventory.containsKey(i.getName())) {
+			System.out.println("You do not have this item!");
+		}else if (inventory.get(i.getName()).getAmount() != 1 && inventory.get(i.getName()).getAmount() >= n) {
+			inventory.get(i.getName()).decreaseAmount(n);
+		}else if (inventory.get(i.getName()).getAmount() != 1 && inventory.get(i.getName()).getAmount() < n) {
+			System.out.println("You do not have enough of this item to use!");
+		}else{
+			if (n > 0) {
+				inventory.remove(i.getName());
+			}
+		}
+		
+		if ((hitPoint + item.getHitPoint()) > maxHitPoint) {
+			hitPoint = maxHitPoint;
+		}else{
+			hitPoint += item.getHitPoint();
+		}
+		
+		attackDamage += item.getAttackDamage();
+		armorPenetration += item.getArmorPenetration();
+		lifeSteal += item.getLifeSteal();
+		critChance += item.getCritChance();
+		armor += item.getArmor();
+		movementSpeed += item.getMovementSpeed();
 		
 	}
 	

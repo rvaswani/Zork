@@ -2,17 +2,21 @@ package com.bayviewglen.ZorkGame;
 
 public class item {
 	private String name;
-	private double hitPoint;
-	private double attackDamage;
-	private double armorPenetration;
-	private double lifeSteal;
-	private double critChance;
-	private double armor;
-	private double movementSpeed;
+	private static double hitPoint;
+	private static double attackDamage;
+	private static double armorPenetration;
+	private static double lifeSteal;
+	private static double critChance;
+	private static double armor;
+	private static double movementSpeed;
 	private String specialAbility;
 	private int goldValue;
 	private String description;
 	private int weight;
+	private int amount;
+	
+	
+	// Various constructors for item class.
 	
 	public item()	{
 		
@@ -32,6 +36,7 @@ public class item {
 		armor = 0;
 		movementSpeed = 0;
 		specialAbility = "";
+		amount = 1;
 	}
 
 	
@@ -53,6 +58,7 @@ public class item {
 		this.goldValue = goldValue;
 		this.description = description;
 		this.weight = weight;
+		this.amount = 1;
 	}
 
 	
@@ -62,31 +68,31 @@ public class item {
 		return name;
 	}
 
-	public double getHitPoint() {
+	public static double getHitPoint() {
 		return hitPoint;
 	}
 
-	public double getAttackDamage() {
+	public static double getAttackDamage() {
 		return attackDamage;
 	}
 
-	public double getArmorPenetration() {
+	public static double getArmorPenetration() {
 		return armorPenetration;
 	}
 
-	public double getLifeSteal() {
+	public static double getLifeSteal() {
 		return lifeSteal;
 	}
 
-	public double getCritChance() {
+	public static double getCritChance() {
 		return critChance;
 	}
 
-	public double getArmor() {
+	public static double getArmor() {
 		return armor;
 	}
 
-	public double getMovementSpeed() {
+	public static double getMovementSpeed() {
 		return movementSpeed;
 	}
 
@@ -106,5 +112,19 @@ public class item {
 		return weight;
 	}
 	
+	public int getAmount() {
+		return amount;
+	}
+	
+	
+	// Various methods that interact with the item
+	
+	public void addAmount(int n) {
+		amount += n;
+	}
+	
+	public void decreaseAmount(int n) {
+		amount -= n;
+	}
 	
 }
