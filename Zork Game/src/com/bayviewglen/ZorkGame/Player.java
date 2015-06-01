@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Player {
+	private static String choice;
 	private String name;
 	private double maxHitPoint;
 	private double hitPoint;
@@ -17,10 +18,15 @@ public class Player {
 	private int level;
 	private int exp;
 	private int wallet;
-	private String Description;
+	private String description;
 	private HashMap<String, item> inventory;
+	private static double levelUpIndex = 1.2;
 	
+	
+	
+	// 3 character options for player to choose from
 	public void printOptions() {
+		Scanner input = new Scanner(System.in);
 		System.out.println("Before you start the game, you have 3 characters to choose from: ");
 		
 		System.out.println("1. Master Yi");
@@ -39,35 +45,75 @@ public class Player {
 		System.out.println("3. Nasus");
 		System.out.println("- Passive Ability \"Thirst\": Has 10% life steal on any damage dealt to an enemy.");
 		System.out.println("- Special Ability \"Siphoning Strike\": Deals 50% attack damage, but gain 3 attack damage permanently to this ability after everytime it is used.");
+		
+		boolean done = false;
+		while (!done) {
+			if (input.nextLine().equalsIgnoreCase("Master Yi") || Integer.parseInt(input.nextLine()) == 1) {
+				choice = "Master Yi";
+				done = true;
+			}else if (input.nextLine().equalsIgnoreCase("Twisted Fate") || Integer.parseInt(input.nextLine()) == 2) {
+				choice = "Twisted Fate";
+				done = true;
+			}else if (input.nextLine().equalsIgnoreCase("Nasus") || Integer.parseInt(input.nextLine()) == 3) {
+				choice = "Nasus";
+				done = true;
+			}else{
+				System.out.println("Please enter a proper choice of character!");
+			}
+		}
+		
+		input.close();
 	}
 	
+	
+	// Constructor of player class
 	public Player() {
-		
-	}
-
-	public Player(double maxHitPoint, double hitPoint, double attackDamage,
-			double armorPenetration, double lifeSteal, double critChance,
-			double armor, double movementSpeed, String specialAbility,
-			int level, int exp, int wallet, String description,
-			HashMap<String, item> inventory) {
-		super();
 		Scanner input = new Scanner(System.in);
 		System.out.println("Please enter your name: ");
 		name = input.nextLine();
-		this.maxHitPoint = maxHitPoint;
-		this.hitPoint = hitPoint;
-		this.attackDamage = attackDamage;
-		this.armorPenetration = armorPenetration;
-		this.lifeSteal = lifeSteal;
-		this.critChance = critChance;
-		this.armor = armor;
-		this.movementSpeed = movementSpeed;
-		this.specialAbility = specialAbility;
-		this.level = level;
-		this.exp = exp;
-		this.wallet = wallet;
-		Description = description;
-		this.inventory = inventory;
+		maxHitPoint = 0;
+		hitPoint = 0;
+		attackDamage = 0;
+		armorPenetration = 0;
+		lifeSteal = 0;
+		critChance = 0;
+		armor = 0;
+		movementSpeed = 0;
+		specialAbility = "";
+		level = 1;
+		exp = 0;
+		wallet = 0;
+		description = "";
+		inventory = new HashMap<String, item>();
+		
+		input.close();
+	}
+	
+	// Setting the character of the player
+	public void setCharacter() {
+		if (choice.equals("Master Yi")) {
+			armorPenetration = 0.1;
+			description = "You are Master Yi, the Wuju Bladesman.";
+			specialAbility = "Focus, Meditate";
+		}else if (choice.equals("Twisted Fate")) {
+			description = "You are Twisted Fate, the Card Master.";
+			specialAbility = "Pick A Card";
+		}else if (choice.equals("Nasus")) {
+			lifeSteal = 0.1;
+			description = "You are Nasus, the Curator of the Sands.";
+			specialAbility = "Siphoning Strike";
+		}
+	}
+	
+	
+	// Various getters and setters for player stats. 
+	
+	public String getChoice() {
+		return choice;
+	}
+	
+	public String getName() {
+		return name;
 	}
 
 	public double getMaxHitPoint() {
@@ -167,11 +213,11 @@ public class Player {
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 
 	public HashMap<String, item> getInventory() {
@@ -183,6 +229,17 @@ public class Player {
 	}
 	
 	
-	
+	// Level up 
+	public void levelUp() {
+		maxHitPoint *= levelUpIndex;
+		hitPoint = maxHitPoint;
+		attackDamage *= levelUpIndex;
+		armor *= levelUpIndex;
+		movementSpeed *= levelUpIndex;
+		exp =- level * 10;
+		wallet += 100;
+		level += 1;
+		
+	}
 	
 }
