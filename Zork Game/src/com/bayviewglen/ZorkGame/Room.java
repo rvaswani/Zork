@@ -130,6 +130,16 @@ class Room
      */
     public Room nextRoom(String direction) 
     {
+    	// Allow one word command and lower case command
+    	if (direction.substring(0,1).equalsIgnoreCase("N"))
+    		direction = "North";
+    	if (direction.substring(0,1).equalsIgnoreCase("S"))
+    		direction = "South";
+    	if (direction.substring(0,1).equalsIgnoreCase("E"))
+    		direction = "East";
+    	if (direction.substring(0,1).equalsIgnoreCase("W"))
+    		direction = "West";
+    	
         return (Room)exits.get(direction);
     }
 
