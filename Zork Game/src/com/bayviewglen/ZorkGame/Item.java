@@ -1,6 +1,6 @@
 package com.bayviewglen.ZorkGame;
 
-public class item {
+public class Item {
 	private String name;
 	private static double hitPoint;
 	private static double attackDamage;
@@ -18,12 +18,12 @@ public class item {
 	
 	// Various constructors for item class.
 	
-	public item()	{
+	public Item()	{
 		
 	}
 	
 	// Constructor for items that are not equipment (Notes, keys, etc)
-	public item(String name, String description, int goldValue, int weight){
+	public Item(String name, String description, int goldValue, int weight){
 		this.name = name;
 		this.description = description;
 		this.goldValue = goldValue;
@@ -41,7 +41,7 @@ public class item {
 
 	
 	// Constructor for equipment type items (Swords, armor, etc)
-	public item(String name, double hitPoint, double attackDamage,
+	public Item(String name, double hitPoint, double attackDamage,
 			double armorPenetration, double lifeSteal, double critChance,
 			double armor, double movementSpeed, String specialAbility, 
 			int goldValue, String description, int weight) {
