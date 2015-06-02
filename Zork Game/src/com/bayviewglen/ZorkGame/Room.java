@@ -22,6 +22,7 @@ class Room
 {
 	private String roomName;
     private String description;
+    private int monsterCount;					// Stores the amount of monsters in this room
     private HashMap<String, Room> exits;        // stores exits of this room.
 
     /**
@@ -38,6 +39,7 @@ class Room
 		// default constructor.
     	roomName = "DEFAULT ROOM";
     	description = "DEFAULT DESCRIPTION";
+    	monsterCount = 0;
     	exits = new HashMap<String, Room>();
 	}
 
@@ -52,7 +54,7 @@ class Room
     	case 'D': dir = "Down";break;
     	case 'O': dir = "Open";break;
     	case 'L': dir = "Look";break;
-    	case 'B': dir = "Back";break;
+    	case 'B': dir = "Break it";break;
     	case 'R': dir = "Read";break;
     	default: throw new Exception("Invalid Direction");
     	
@@ -65,7 +67,7 @@ class Room
      * Define the exits of this room.  Every direction either leads to
      * another room or is null (no exit there).
      */
-    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down, Room open, Room look, Room back, Room read) 
+    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down, Room open, Room look, Room Break, Room read) 
     {
         if(north != null)
             exits.put("North", north);
@@ -81,10 +83,10 @@ class Room
             exits.put("Down", down);
         if (open != null)
         	exits.put("Open", open);
-        if (look !=null)
+        if (look != null)
         	exits.put("Look", look);
-        if (back != null)
-        	exits.put("Break", back);
+        if (Break != null)
+        	exits.put("Break", Break);
         if (read != null)
         	exits.put("read", read);
     }
@@ -106,7 +108,7 @@ class Room
     public String longDescription()
     {
     	System.out.println("____________________________________________________________________________________________________________________");
-        return "\nFloor: " + roomName.split("\\.")[0].replaceAll("Room ", "") + "\n" + "Room: " + roomName.replaceAll("Room ", "") +"\n\n" + description + "\n" + exitString();
+        return "\nFloor: " + roomName.split("\\.")[0].replaceAll("Room ", "") + "\n" + "Room: " + roomName.replaceAll("Room ", "") + "\n" + "# of Monsters in this room: " + monsterCount + "\n" + exitString() + "\n\n" + description + "\n";
     }
  
     /**
@@ -145,5 +147,13 @@ class Room
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public int getMonsterCount() {
+		return monsterCount;
+	}
+	
+	public void setMonsterCount(int monsterCount) {
+		this.monsterCount = monsterCount;
 	}
 }

@@ -48,6 +48,9 @@ class Game
 				// Read the Description
 				String roomDescription = roomScanner.nextLine();
 				room.setDescription(roomDescription.split(":")[1].replaceAll("<br>", "\n").trim());
+				// Read the amount of Monsters in this room
+				int monsterCount = Integer.parseInt(roomScanner.nextLine().split(":")[1].trim());
+				room.setMonsterCount(monsterCount);
 				// Read the Exits
 				String roomExits = roomScanner.nextLine();
 				// An array of strings in the format E-RoomName
@@ -124,6 +127,7 @@ class Game
         System.out.println("Thank you for playing.  Good bye.");
     }
 
+    
     /**
      * Print out the opening message for the player.
      */
@@ -170,7 +174,7 @@ class Game
     private void printHelp() {
 		System.out.println("\nYou have several difference commands you can use to complete game:");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.println("1. Go + \n   a. North  \n   b. South  \n   c. East  \n   d. West  \n   e. Up  \n   f. Down  \n   g. Open  \n   h. Look  \n   i. Back  \n   j. Read  \n2. Quit\n");
+		System.out.println("1. Go + \n   a. North  \n   b. South  \n   c. East  \n   d. West  \n   e. Up  \n   f. Down  \n   g. Open  \n   h. Look  \n   i. Break  \n   j. Read  \n2. Quit\n");
 		System.out.println("Find your way to the final level and defeat the final boss. Good luck.");
 		System.out.println();
 		

@@ -47,7 +47,7 @@ Room Name: Room 3.7
 Room Description:  There are two doors adjacent to you.
 Exit Rooms: S-Room 3.8, W-Room 3.9, E-Room 3.6
 Room Name: Room 3.8
-Room Description:  There are his guards.
+Room Description:  There are the monsters!
 Exit Rooms: N-Room 3.7
 Room Name: Room 3.9
 Room Description: There is a guard and a staircase right behind him. (FIGHT)
@@ -76,6 +76,7 @@ Exit Rooms: S-Room 4.7
 Room Name: Room 4.8
 Room Description: This is the balcony. You can see the blue sky and the sun and feel the chilling wind. There is a note on the ground. There are two windows on the wall of the building. One of them is very small, and one of them is big and looks brittle...
 Exit Rooms: E-Room 4.3, N-Room 4.11
+Exit Rooms: E-Room 4.3, N-Room 4.12
 Room Name: Room 4.9
 Room Description: There is one big monster guarding a key. Nothing else is in the room. The monster looks creepy...
 Exit Rooms: S-Room 4.9
@@ -84,7 +85,7 @@ Room Description: This is a big room, but there is only one small monster in it.
 Exit Rooms: S-Room 4.4, W-Room 4.13 (Requires key)
 Room Name: Room 4.11
 Room Description: Great job breaking the window! You entered this room with nothing but gold pieces on the ground. There is one door on the east.
-Exit Rooms: W-Room 4.8, E-Room 4.12
+Exit Rooms: S-Room 4.8, E-Room 4.12
 Room Name: Room 4.12
 Room Description: !!! There are 4 monsters in the room. They all look very aggressive. However, there is something shiny behind them...
 Exit Rooms: W-Room 4.11
@@ -116,7 +117,7 @@ Room Name: Room 5.8
 Room Description: There is a door in front of you. Enter at your own risk.
 Exit Rooms: O-Room 5.9, S-Room 5.6
 Room Name: Room 5.9
-Room Description: There are two guards in the room.
+Room Description: There are three monsters in the room.
 Exit Rooms: N-Room 5.10, S-Room 5.8
 Room Name: Room 5.10
 Room Description: There is a staircase in front of you
@@ -189,7 +190,7 @@ Room Description: Welcome to the Seventh Floor... You are almost at the top!
 Exit Rooms: W-Room 7.2, E-Room 7.3, N-Room 7.4
 Room Name: Room 7.10
 Room Description: You are at the seventh floor entrance... There is a circular hallway in front of you.
-Room Exists: W-Room 7.2, E-Room 7.3, N-Room 7.4
+Room Exits: W-Room 7.2, E-Room 7.3, N-Room 7.4
 Room Name: Room 7.2
 Room Description: Room is filled with monsters.
 Exit Rooms: E-Room 7.10
@@ -197,7 +198,7 @@ Room Name: Room 7.3
 Room Description: That's a cabinet right in front of you.
 Exit Rooms: O-Room 7.31
 Room Name: Room 7.31
-Room Description: Cabinet is empty. 
+Room Description: Cabinet has a monster inside it!!
 Exit Rooms: W-Room 7.10
 Room Name: Room 7.4
 Room Description: There is a circular table.
@@ -280,12 +281,13 @@ Exit Rooms: E-Room 8.16, W-Room 8.14
 Room Name: Room 8.16
 Room Description: Sorry, you have entered the trap room. You see a thousand arrows coming at you at the same time. You died...
 Exit Rooms:
+Exit Rooms: U-Room 00
 Room Name: Room 9.1
 Room Description: Welcome to the ninth floor... One more floor away... Keep Fighting!!!
 Exit Rooms: W-Room 9.2, E-Room 9.3
 Room Name: Room 9.01
 Room Description: You are back at the ninth floor entrance.
-Room Exists:  W-Room 9.2, E-Room 9.3
+Room Exits:  W-Room 9.2, E-Room 9.3
 Room Name: Room 9.2
 Room Description: There is a monster... looks asleep.
 Exit Rooms: W-Room 9.21, E-Room 9.1
@@ -395,7 +397,7 @@ Room Name: Room 9.1601
 Room Description: More dead monsters...
 Exit Rooms: S-Room 9.17
 Room Name: Room 9.17
-Room Description: Finally... the final flight of stairs
+Room Description: Finally... the final flight of stairs... behind this monster!!!
 Exit Rooms: U-Room 10.1
 Room Name: Room 10.1
 Room Description: Welcome to the tenth floor. This if the final floor! Find the keys to unlock powerful items and beat the final boss of the game! There are three doors in front of you in the direction of west, north, and east. All monsters in this level reset after you leave a room.
