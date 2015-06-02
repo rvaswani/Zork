@@ -19,9 +19,15 @@ public class Player {
 	private int exp;
 	private int wallet;
 	private String description;
-	private HashMap<String, item> inventory;
+	private HashMap<String, Item> inventory;
 	private int inventorySpace;
 	private static double levelUpIndex = 1.2;
+	
+	private Item helmet;
+	private Item sword;
+	private Item shield;
+	private Item fullBodyArmor;
+	private Item boots;
 	
 	
 	
@@ -85,7 +91,7 @@ public class Player {
 		exp = 0;
 		wallet = 100;
 		description = "";
-		inventory = new HashMap<String, item>();
+		inventory = new HashMap<String, Item>();
 		inventorySpace = 20;
 		
 		input.close();
@@ -222,15 +228,77 @@ public class Player {
 		this.description = description;
 	}
 
-	public HashMap<String, item> getInventory() {
+	public HashMap<String, Item> getInventory() {
 		return inventory;
 	}
 
-	public void setInventory(HashMap<String, item> inventory) {
+	public void setInventory(HashMap<String, Item> inventory) {
 		this.inventory = inventory;
 	}
 	
 	
+	// Various equipment type items of player
+	
+	public Item getHelmet() {
+		return helmet;
+	}
+
+
+	public Item setHelmet(Item helmet) {
+		Item oldHelmet = this.helmet;
+		this.helmet = helmet;
+		return oldHelmet;
+	}
+
+
+	public Item getSword() {
+		return sword;
+	}
+
+
+	public Item setSword(Item sword) {
+		Item oldSword = this.sword;
+		this.sword = sword;
+		return oldSword;
+	}
+
+
+	public Item getShield() {
+		return shield;
+	}
+
+
+	public Item setShield(Item shield) {
+		Item oldShield = this.shield;
+		this.shield = shield;
+		return oldShield;
+	}
+
+
+	public Item getFullBodyArmor() {
+		return fullBodyArmor;
+	}
+
+
+	public Item setFullBodyArmor(Item fullBodyArmor) {
+		Item oldFullBodyArmor = this.fullBodyArmor;
+		this.fullBodyArmor = fullBodyArmor;
+		return oldFullBodyArmor;
+	}
+
+
+	public Item getBoots() {
+		return boots;
+	}
+
+
+	public Item setBoots(Item boots) {
+		Item oldBoots = this.boots;
+		this.boots = boots;
+		return oldBoots;
+	}
+
+
 	// Various methods that interact with the player
 	
 	// Check stats
@@ -261,7 +329,7 @@ public class Player {
 	}
 	
 	// Obtain an item with specified amount
-	public void addItem(item i, int n) {
+	public void addItem(Item i, int n) {
 		inventorySpace -= n;
 		if (inventory.containsKey(i.getName())) {
 			inventory.get(i.getName()).addAmount(n);
@@ -272,7 +340,7 @@ public class Player {
 	}
 	
 	// Use an item with specified amount. This method is specifically for items like potions and keys
-	public void useItem(item i, int n) {
+	public void useItem(Item i, int n) {
 		inventorySpace += n;
 		if (!inventory.containsKey(i.getName())) {
 			System.out.println("You do not have this item!");
@@ -286,18 +354,18 @@ public class Player {
 			}
 		}
 		
-		if ((hitPoint + item.getHitPoint()) > maxHitPoint) {
+		if ((hitPoint + Item.getHitPoint()) > maxHitPoint) {
 			hitPoint = maxHitPoint;
 		}else{
-			hitPoint += item.getHitPoint();
+			hitPoint += Item.getHitPoint();
 		}
 		
-		attackDamage += item.getAttackDamage();
-		armorPenetration += item.getArmorPenetration();
-		lifeSteal += item.getLifeSteal();
-		critChance += item.getCritChance();
-		armor += item.getArmor();
-		movementSpeed += item.getMovementSpeed();
+		attackDamage += Item.getAttackDamage();
+		armorPenetration += Item.getArmorPenetration();
+		lifeSteal += Item.getLifeSteal();
+		critChance += Item.getCritChance();
+		armor += Item.getArmor();
+		movementSpeed += Item.getMovementSpeed();
 		
 	}
 	
