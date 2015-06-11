@@ -1,9 +1,10 @@
 package com.bayviewglen.ZorkGame;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Player {
+public class Player implements Serializable {
 	private static String choice;
 	private String name;
 	private double maxHitPoint;

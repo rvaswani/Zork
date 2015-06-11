@@ -1,6 +1,8 @@
 package com.bayviewglen.ZorkGame;
 
-public class Monster {
+import java.io.Serializable;
+
+public class Monster implements Serializable{
 	private String name;
 	private int level;
 	private double hitPoint;

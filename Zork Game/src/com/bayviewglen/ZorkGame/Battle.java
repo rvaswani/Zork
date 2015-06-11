@@ -1,8 +1,9 @@
 package com.bayviewglen.ZorkGame;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Battle {
+public class Battle implements Serializable {
 	
 	private Player player;
 	private Monster monster;

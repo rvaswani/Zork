@@ -14,11 +14,12 @@ package com.bayviewglen.ZorkGame;
  * to the neighbouring room, or null if there is no exit in that direction.
  */
 
+import java.io.Serializable;
 import java.util.Set;
 import java.util.HashMap;
 import java.util.Iterator;
 
-class Room 
+class Room  implements Serializable
 {
 	private String roomName;
     private String description;
@@ -114,6 +115,7 @@ class Room
     {
     	System.out.println("____________________________________________________________________________________________________________________");
         return "\nFloor: " + roomName.split("\\.")[0].replaceAll("Room ", "") + "\n" + "# of Monsters in this room: " + monsterCount + "\n" + exitString() + "\n\n" + description + "\n";
+
     }
  
     /**
@@ -146,7 +148,7 @@ class Room
     		direction = "West";
     	if (direction.substring(0,1).equalsIgnoreCase("B"))
     		direction = "Back";
-    	
+
         return (Room)exits.get(direction);
     }
 
