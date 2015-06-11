@@ -14,6 +14,8 @@ public class Monster {
 	private String description;
 	private int goldValue;
 	
+	private boolean dead;
+	
 	public Monster(){
 		
 	}
@@ -32,6 +34,7 @@ public class Monster {
 		exp = ((int)(Math.random() * 21) - 10) + (level - 1) * 50;	// Randomize the experience gained after killing each monster.
 		this.description = description;
 		goldValue = ((int)(Math.random() * 11) - 5) + level * 10;	// Randomize the amount of gold gained after killing each monster.
+		dead = false;
 	}
 
 	
@@ -124,6 +127,18 @@ public class Monster {
 	
 	public int getGoldValue() {
 		return goldValue;
+	}
+	
+	public boolean getDead() {
+		return dead;
+	}
+	
+	public void die() {
+		dead = true;
+	}
+	
+	public void revive() {
+		dead = false;
 	}
 	
 }

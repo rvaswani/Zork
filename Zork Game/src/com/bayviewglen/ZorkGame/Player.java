@@ -22,6 +22,7 @@ public class Player {
 	private HashMap<String, Item> inventory;
 	private int inventorySpace;
 	private static double levelUpIndex = 1.2;
+	private int siphoningStrikeCount;			// Exclusive skill to character "Nasus"
 	
 	private Item helmet;
 	private Item sword;
@@ -33,7 +34,8 @@ public class Player {
 	
 	// 3 character options for player to choose from
 	public void printOptions() {
-		Scanner input = new Scanner(System.in);
+//		Scanner input = new Scanner(System.in);
+		//input.reset();
 		System.out.println("Before you start the game, you have 3 characters to choose from: ");
 		
 		System.out.println("1. Master Yi");
@@ -43,7 +45,7 @@ public class Player {
 		
 		System.out.println("2. Twisted Fate");
 		System.out.println("- Special Ability \"Pick A Card\": Draws a card from his card deck.");
-		System.out.println("\tGreen Card --> Gain 20% max health. (20% Chance)");
+		System.out.println("\tGreen Card --> Gain 20% health. (20% Chance)");
 		System.out.println("\tRed Card --> Deal 20% enemy max health as physical damage. (20% Chance)");
 		System.out.println("\tGold Card --> Gain 5% extra gold after winning the battle. This effect can stack. (30% Chance)");
 		System.out.println("\tBlack Card --> Gain 1% increase to all stats permanently. (20% Chance)");
@@ -55,13 +57,14 @@ public class Player {
 		
 		boolean done = false;
 		while (!done) {
-			if (input.nextLine().equalsIgnoreCase("Master Yi") || Integer.parseInt(input.nextLine()) == 1) {
+			String nextline = TESTBATTLE.input.nextLine();
+			if (nextline.equalsIgnoreCase("Master Yi") || Integer.parseInt(nextline) == 1) {
 				choice = "Master Yi";
 				done = true;
-			}else if (input.nextLine().equalsIgnoreCase("Twisted Fate") || Integer.parseInt(input.nextLine()) == 2) {
+			}else if (nextline.equalsIgnoreCase("Twisted Fate") || Integer.parseInt(nextline) == 2) {
 				choice = "Twisted Fate";
 				done = true;
-			}else if (input.nextLine().equalsIgnoreCase("Nasus") || Integer.parseInt(input.nextLine()) == 3) {
+			}else if (nextline.equalsIgnoreCase("Nasus") || Integer.parseInt(nextline) == 3) {
 				choice = "Nasus";
 				done = true;
 			}else{
@@ -69,15 +72,15 @@ public class Player {
 			}
 		}
 		
-		input.close();
+		//input.close();
 	}
 	
 	
 	// Constructor of player class
 	public Player() {
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		System.out.println("Please enter your name: ");
-		name = input.nextLine();
+		name = TESTBATTLE.input.nextLine();
 		maxHitPoint = 100;
 		hitPoint = maxHitPoint;
 		attackDamage = 20;
@@ -94,7 +97,7 @@ public class Player {
 		inventory = new HashMap<String, Item>();
 		inventorySpace = 20;
 		
-		input.close();
+		//input.close();
 	}
 	
 	// Setting the character of the player
@@ -236,6 +239,14 @@ public class Player {
 		this.inventory = inventory;
 	}
 	
+	public int getSiphoningStrikeCount() {
+		return siphoningStrikeCount;
+	}
+	
+	public void addSiphoningStrikeCount() {
+		siphoningStrikeCount++;
+	}
+	
 	
 	// Various equipment type items of player
 	
@@ -367,6 +378,18 @@ public class Player {
 		armor += Item.getArmor();
 		movementSpeed += Item.getMovementSpeed();
 		
+	}
+	
+	// "Twisted Fate" special ability
+	public void blackCard() {
+		double ratio = 1.01;
+		maxHitPoint *= ratio;
+		attackDamage *= ratio;
+		armorPenetration *= ratio;
+		lifeSteal *= ratio;
+		critChance *= ratio;
+		armor *= ratio;
+		movementSpeed *= ratio;		
 	}
 	
 }

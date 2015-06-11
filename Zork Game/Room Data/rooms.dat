@@ -63,11 +63,11 @@ Room Description:  There are two doors adjacent to you.
 # of Monsters: 0
 Exit Rooms: S-Room 3.8, W-Room 3.9, E-Room 3.6
 Room Name: Room 3.8
-Room Description:  There are his guards.
+Room Description:  There are the monsters!
 # of Monsters: 2
 Exit Rooms: N-Room 3.7
 Room Name: Room 3.9
-Room Description:  There is a guard and a staircase right behind him. (FIGHT)
+Room Description:  There is a guard and the staircase right behind him. 
 # of Monsters: 1
 Exit Rooms: U-Room 4.1, E-Room 3.7
 Room Name: Room 4.1
@@ -129,6 +129,10 @@ Exit Rooms: E-Room 5.2, N-Room 5.3
 Room Name: Room 5.2
 Room Description: There is a desk (OPTION TO CHECK)
 # of Monsters: 0
+Exit Rooms: W-Room 5.1, L-Room 5.201
+Room Name: Room 5.201
+Room Description: You found a key!
+# of Monsters: 0
 Exit Rooms: W-Room 5.1
 Room Name: Room 5.3
 Room Description: There is two hallways, one on your right and one of your left. There is also a locked room in front of you.
@@ -139,7 +143,7 @@ Room Description: You are currently in the left-wing corridor. Two doors on the 
 # of Monsters: 0
 Exit Rooms: S-Room 5.5, W-Room 5.6, E-Room 5.3
 Room Name: Room 5.5
-Room Description: There are two guards in the room
+Room Description: There are two monsters in the room.
 # of Monsters: 2
 Exit Rooms: N-Room 5.4
 Room Name: Room 5.6
@@ -155,7 +159,7 @@ Room Description: There is a door in front of you. Enter at your own risk.
 # of Monsters: 0
 Exit Rooms: O-Room 5.9, S-Room 5.6
 Room Name: Room 5.9
-Room Description: There are two guards in the room.
+Room Description: There are three monsters in the room, waiting for your presence.
 # of Monsters: 3
 Exit Rooms: N-Room 5.10, S-Room 5.8
 Room Name: Room 5.10
@@ -175,7 +179,7 @@ Room Description: There is a door nearby.
 # of Monsters: 0
 Exit Rooms: W-Room 5.14, S-Room 5.12, N-Room 5.15
 Room Name: Room 5.14
-Room Description: There is a guard (FIGHT)
+Room Description: There is a monster in front of you thinking he can beat you.
 # of Monsters: 1
 Exit Rooms: E-Room 5.13
 Room Name: Room 5.15
@@ -263,7 +267,7 @@ Room Description: That's a cabinet right in front of you.
 # of Monsters: 0
 Exit Rooms: O-Room 7.31
 Room Name: Room 7.31
-Room Description: Cabinet is empty.
+Room Description: Oh what?!! A monster is in it!
 # of Monsters: 1
 Exit Rooms: W-Room 7.10
 Room Name: Room 7.4
@@ -303,7 +307,7 @@ Room Description:  Back to the circular table.
 # of Monsters: 0
 Exit Rooms: S-Room 7.1, W-Room 7.5, E-Room 7.6
 Room Name: Room 7.5
-Room Description: There is one monster... but looks dead.
+Room Description: There is one monster... but looks dead....... Nevermind.
 # of Monsters: 1
 Exit Rooms: E-Room 7.40, N-Room 7.51
 Room Name: Room 7.51
@@ -383,7 +387,7 @@ Room Description: You are back at the ninth floor entrance.
 # of Monsters: 0
 Room Exists:  W-Room 9.2, E-Room 9.3
 Room Name: Room 9.2
-Room Description: There is a monster... looks asleep.
+Room Description: There is a monster... looks asleep, bet it's not though.
 # of Monsters: 1
 Exit Rooms: W-Room 9.21, E-Room 9.1
 Room Name: Room 9.21
@@ -415,7 +419,7 @@ Room Description: Ohh look... a door!
 # of Monsters: 0
 Exit Rooms: O-Room 9.32, W-Room 9.01
 Room Name: Room 9.32
-Room Description: Two monsters... fight them!
+Room Description: Two monsters... show 'em who's boss!
 # of Monsters: 2
 Exit Rooms: S-Room 9.30, W-Room 9.4
 Room Name: Room 9.320
@@ -457,9 +461,9 @@ Exit Rooms: W-Room 9.10, E-Room 9.102
 Room Name: Room 9.102
 Room Description: It's a picture with a message below it...
 # of Monsters: 0
-Exit Rooms: W-Room 9.10, R-Room 9.1002
+Exit Rooms: W-Room 9.10, L-Room 9.1002
 Room Name: Room 9.1002
-Room Description: "I can't be stopped. My will and power is what has brought my success" -Mr. DesLauriers
+Room Description: "I can't be stopped. I'm too big... Too strong... Too good." -Mr. DesLauriers
 # of Monsters: 0
 Exit Rooms: W-Room 9.10
 Room Name: Room 9.8
@@ -511,7 +515,7 @@ Room Description: You are now in the most northern part of the floor.
 # of Monsters: 0
 Exit Rooms: S-Room 9.81, W-Room 9.15, E-Room 13
 Room Name: Room 9.15
-Room Description: There is a monster in this room. Fight it off!
+Room Description: There are two monsters in this room. Fight them off!
 # of Monsters: 2
 Exit Rooms: W-Room 9.16, E-Room 9.14
 Room Name: Room 9.16
@@ -527,7 +531,7 @@ Room Description: More dead monsters...
 # of Monsters: 0
 Exit Rooms: S-Room 9.17
 Room Name: Room 9.17
-Room Description: Finally... the final flight of stairs
+Room Description: Finally... the final flight of stairs... huh? No monster?? ..................... Nevermind, here it is.
 # of Monsters: 1
 Exit Rooms: U-Room 10.1
 Room Name: Room 10.1
@@ -579,7 +583,7 @@ Room Description: There is a shiny sword on the ground. It looks gorgeous and po
 # of Monsters: 0
 Exit Rooms: N-Room 10.11, S-Room 10.11, E-Room 10.11, W-Room 10.11
 Room Name: Room 10.13
-Room Description: There is a thick yet aesthetically beautiful armor on the ground. Pick it up! Also, there is a small key labelled "4" lying on the side.
+Room Description: There is a thick yet aesthetically pleasing armor on the ground. Pick it up! Also, there is a small key labelled "4" lying on the side.
 # of Monsters: 0
 Exit Rooms: N-Room 10.11, S-Room 10.11, E-Room 10.11, W-Room 10.11
 Room Name: Room 10.14

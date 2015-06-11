@@ -54,8 +54,9 @@ class Room
     	case 'D': dir = "Down";break;
     	case 'O': dir = "Open";break;
     	case 'L': dir = "Look";break;
-    	case 'B': dir = "Break it";break;
+    	case 'B': dir = "Back";break;
     	case 'R': dir = "Read";break;
+    	case 'F': dir = "Fight";break;
     	default: throw new Exception("Invalid Direction");
     	
     	}
@@ -67,7 +68,7 @@ class Room
      * Define the exits of this room.  Every direction either leads to
      * another room or is null (no exit there).
      */
-    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down, Room open, Room look, Room Break, Room read) 
+    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down, Room open, Room look, Room Break, Room read, Room fight, Room back) 
     {
         if(north != null)
             exits.put("North", north);
@@ -88,7 +89,11 @@ class Room
         if (Break != null)
         	exits.put("Break", Break);
         if (read != null)
-        	exits.put("read", read);
+        	exits.put("Read", read);
+        if (fight != null)
+        	exits.put("Fight", fight);
+        if (back != null)
+        	exits.put("Back", back);
     }
 
     /**
@@ -108,7 +113,7 @@ class Room
     public String longDescription()
     {
     	System.out.println("____________________________________________________________________________________________________________________");
-        return "\nFloor: " + roomName.split("\\.")[0].replaceAll("Room ", "") + "\n" + "Room: " + roomName.replaceAll("Room ", "") + "\n" + "# of Monsters in this room: " + monsterCount + "\n" + exitString() + "\n\n" + description + "\n";
+        return "\nFloor: " + roomName.split("\\.")[0].replaceAll("Room ", "") + "\n" + "# of Monsters in this room: " + monsterCount + "\n" + exitString() + "\n\n" + description + "\n";
     }
  
     /**
@@ -139,6 +144,8 @@ class Room
     		direction = "East";
     	if (direction.substring(0,1).equalsIgnoreCase("W"))
     		direction = "West";
+    	if (direction.substring(0,1).equalsIgnoreCase("B"))
+    		direction = "Back";
     	
         return (Room)exits.get(direction);
     }

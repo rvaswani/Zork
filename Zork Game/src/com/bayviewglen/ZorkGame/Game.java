@@ -2,8 +2,11 @@ package com.bayviewglen.ZorkGame;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.io.Serializable;
 
 /**
  * Class Game - the main class of the "Zork" game.
@@ -24,10 +27,11 @@ import java.util.Scanner;
  *  commands that the parser returns.
  */
 
-class Game 
+class Game implements Serializable
 {
     private Parser parser;
     private Room currentRoom;
+    private Room lastRoom;
     // This is a MASTER object that contains all of the rooms and is easily accessible.
     // The key will be the name of the room -> no spaces (Use all caps and underscore -> Great Room would have a key of GREAT_ROOM
     // In a hashmap keys are case sensitive.
@@ -114,7 +118,7 @@ class Game
     public void play() 
     {            
         printWelcome();
-
+        
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
                 
@@ -174,7 +178,7 @@ class Game
     private void printHelp() {
 		System.out.println("\nYou have several difference commands you can use to complete game:");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.println("1. Go + \n   a. North  \n   b. South  \n   c. East  \n   d. West  \n   e. Up  \n   f. Down  \n   g. Open  \n   h. Look  \n   i. Break  \n   j. Read  \n2. Quit\n");
+		System.out.println("1. Go + \n   a. North  \n   b. South  \n   c. East  \n   d. West  \n   e. Up  \n   f. Down  \n   g. Open  \n   h. Look  \n   i. Back  \n   j. Read  \n2. Quit\n");
 		System.out.println("Find your way to the final level and defeat the final boss. Good luck.");
 		System.out.println();
 		
@@ -198,15 +202,37 @@ class Game
         String direction = command.getSecondWord();
 
         // Try to leave current room.
-        Room nextRoom = currentRoom.nextRoom(direction);
+        if (direction.equalsIgnoreCase("back") && lastRoom != null && !currentRoom.getRoomName().split("\\.")[1].substring(0,1).equals("1")){
+        	Room temp = currentRoom;
+        	currentRoom = lastRoom;
+        	lastRoom = temp;
+        	System.out.println(currentRoom.longDescription());
+        }else{
+        	Room nextRoom = currentRoom.nextRoom(direction);
 
-        if (nextRoom == null)
-            System.out.println("There is nothing here! Search somewhere else.");
-        else 
-        {
-            currentRoom = nextRoom;
-            System.out.println(currentRoom.longDescription());
+        	if (nextRoom == null)
+        		System.out.println("There is nothing here! Search somewhere else.");
+        	else {
+        		lastRoom = currentRoom;
+        		currentRoom = nextRoom;
+        		System.out.println(currentRoom.longDescription());
+        	}
         }
+    }
+    public void save () throws Exception {
+    	
+    	// Write to disk with FileOutputStream
+    	FileOutputStream f_out = new
+    		FileOutputStream("SavedFile.data");
+    	
+    	// Write object with ObjectOutputStream
+    	ObjectOutputStream obj_out = new
+    		ObjectOutputStream (f_out);
+    	
+    	// Write object out to disk	
+    	obj_out.writeObject (this);
+    	obj_out.close();
+    		
     }
   
 }
