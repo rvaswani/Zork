@@ -220,7 +220,7 @@ class Game implements Serializable
             System.out.println("Go where?");
             return;
         }
-
+        
         String direction = command.getSecondWord();
 
         // Try to leave current room.
@@ -235,12 +235,17 @@ class Game implements Serializable
         	beginningRoom = newTemp;
         	System.out.println(currentRoom.longDescription());
         }else{
+            if (currentRoom.getMonsterCount() > 1) {
+            	System.out.println("You have to fight to leave this room!");
+            	return;
+            }
+
         	Room nextRoom = currentRoom.nextRoom(direction);
         	
           	if (nextRoom == null)
         		System.out.println("There is nothing here! Search somewhere else.");
         	else {
-        		lastRoom = currentRoom;
+        		lastRoom = currentRoom; 
         		currentRoom = nextRoom;
         		if (direction.equalsIgnoreCase("Up") || currentRoom.getRoomName().split("\\.")[1].substring(0).equals("1")) 
         			beginningRoom = nextRoom; 
