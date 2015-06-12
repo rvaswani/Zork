@@ -63,7 +63,6 @@ Room Description:  There are two doors adjacent to you.
 # of Monsters: 0
 Exit Rooms: S-Room 3.8, W-Room 3.9, E-Room 3.6
 Room Name: Room 3.8
-<<<<<<< HEAD
 Room Description:  There are the monsters!
 # of Monsters: 2
 Exit Rooms: N-Room 3.7
@@ -466,7 +465,7 @@ Exit Rooms: W-Room 9.10, E-Room 9.102
 Room Name: Room 9.102
 Room Description: It's a picture with a message below it...
 # of Monsters: 0
-Exit Rooms: W-Room 9.10, L-Room 9.1002
+Exit Rooms: W-Room 9.10, R-Room 9.1002
 Room Name: Room 9.1002
 Room Description: "I can't be stopped. I'm too big... Too strong... Too good." -Mr. DesLauriers
 # of Monsters: 0

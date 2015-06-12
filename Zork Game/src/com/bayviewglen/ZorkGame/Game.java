@@ -1,8 +1,10 @@
 package com.bayviewglen.ZorkGame;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -159,8 +161,29 @@ class Game implements Serializable
         }
 
         String commandWord = command.getCommandWord();
-        if (commandWord.equals("help"))
-            printHelp();
+        if (commandWord.equals("help")) {
+        	printHelp();
+        	System.out.println(currentRoom.longDescription());
+        }
+        else if (commandWord.equals("save")) {
+			try {
+				save();
+				System.out.println(currentRoom.longDescription());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+        }
+        else if (commandWord.equals("load")) {
+        	Game loadedGame;
+			try {
+				loadedGame = load();
+				loadedGame.play();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+					
+        }
         else if (commandWord.equals("go"))
             goRoom(command);
         else if (commandWord.equals("quit"))
@@ -178,7 +201,7 @@ class Game implements Serializable
     private void printHelp() {
 		System.out.println("\nYou have several difference commands you can use to complete game:");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.println("1. Go + \n   a. North  \n   b. South  \n   c. East  \n   d. West  \n   e. Up  \n   f. Down  \n   g. Open  \n   h. Look  \n   i. Back  \n   j. Read  \n2. Quit\n");
+		System.out.println("1. Go + \n   a. North  \n   b. South  \n   c. East  \n   d. West  \n   e. Up  \n   f. Down  \n   g. Open  \n   h. Look  \n   i. Back  \n   j. Read  \n2. Quit  \n3. Save  \n4. Load\n");
 		System.out.println("Find your way to the final level and defeat the final boss. Good luck.");
 		System.out.println();
 		
@@ -234,5 +257,25 @@ class Game implements Serializable
     	obj_out.close();
     		
     }
-  
+    
+    public Game load() throws Exception {
+        // Read from disk using FileInputStream
+        
+        try {
+        Game game;
+        FileInputStream f_in = new FileInputStream("SavedFile.data");
+
+        // Read object using ObjectInputStream
+        ObjectInputStream obj_in = new ObjectInputStream(f_in);
+
+        // Read an object
+        game = (Game) obj_in.readObject();
+        obj_in.close();
+        return game;
+        } catch (Exception ex) {
+               System.out.println("Cannot load...");
+               return null;
+        }
+ }
+ 
 }
