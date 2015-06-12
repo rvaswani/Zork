@@ -192,8 +192,6 @@ class Game implements Serializable
                 System.out.println("Quit what?");
             else
                 return true;  // signal that we want to quit
-        }else if (commandWord.equals("eat")){
-        	System.out.println("Eating is for the weak.");
         }
         return false;
     }
