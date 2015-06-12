@@ -34,6 +34,7 @@ class Game implements Serializable
     private Parser parser;
     private Room currentRoom;
     private Room lastRoom;
+    private Room beginningRoom;
     // This is a MASTER object that contains all of the rooms and is easily accessible.
     // The key will be the name of the room -> no spaces (Use all caps and underscore -> Great Room would have a key of GREAT_ROOM
     // In a hashmap keys are case sensitive.
@@ -199,7 +200,7 @@ class Game implements Serializable
     private void printHelp() {
 		System.out.println("\nYou have several difference commands you can use to complete game:");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.println("1. Go + \n   a. North  \n   b. South  \n   c. East  \n   d. West  \n   e. Up  \n   f. Down  \n   g. Open  \n   h. Look  \n   i. Back  \n   j. Read  \n2. Quit  \n3. Save  \n4. Load\n");
+		System.out.println("1. Go + \n    a. North  \n    b. South  \n    c. East  \n    d. West  \n    e. Up  \n    f. Down  \n    g. Open  \n    h. Look  \n    i. Back  \n    j. Beginning  \n    k. Read  \n2. Quit  \n3. Save  \n4. Load\n");
 		System.out.println("Find your way to the final level and defeat the final boss. Good luck.");
 		System.out.println();
 		
@@ -223,19 +224,27 @@ class Game implements Serializable
         String direction = command.getSecondWord();
 
         // Try to leave current room.
-        if (direction.equalsIgnoreCase("back") && lastRoom != null && !currentRoom.getRoomName().split("\\.")[1].substring(0,1).equals("1")){
+        if ((direction.equalsIgnoreCase("back") || direction.equalsIgnoreCase("B")) && lastRoom != null && !currentRoom.getRoomName().split("\\.")[1].substring(0).equals("1")){
         	Room temp = currentRoom;
         	currentRoom = lastRoom;
         	lastRoom = temp;
         	System.out.println(currentRoom.longDescription());
+        } else if ((direction.equalsIgnoreCase("beginning") || direction.equalsIgnoreCase("Beg")) && lastRoom != null) {
+        	Room newTemp = beginningRoom;
+        	currentRoom = beginningRoom;
+        	beginningRoom = newTemp;
+        	System.out.println(currentRoom.longDescription());
         }else{
         	Room nextRoom = currentRoom.nextRoom(direction);
-
-        	if (nextRoom == null)
+        	
+          	if (nextRoom == null)
         		System.out.println("There is nothing here! Search somewhere else.");
         	else {
         		lastRoom = currentRoom;
         		currentRoom = nextRoom;
+        		if (direction.equalsIgnoreCase("Up") || currentRoom.getRoomName().split("\\.")[1].substring(0).equals("1")) 
+        			beginningRoom = nextRoom; 
+        			currentRoom = nextRoom;        			       		
         		System.out.println(currentRoom.longDescription());
         	}
         }

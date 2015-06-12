@@ -69,7 +69,7 @@ class Room  implements Serializable
      * Define the exits of this room.  Every direction either leads to
      * another room or is null (no exit there).
      */
-    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down, Room open, Room look, Room Break, Room read, Room fight, Room back) 
+    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down, Room beginning, Room open, Room look, Room read, Room fight, Room back) 
     {
         if(north != null)
             exits.put("North", north);
@@ -83,17 +83,17 @@ class Room  implements Serializable
             exits.put("Up", up);
         if(up != null)
             exits.put("Down", down);
-        if (open != null)
+        if(open != null)
         	exits.put("Open", open);
-        if (look != null)
+        if(look != null)
         	exits.put("Look", look);
-        if (Break != null)
-        	exits.put("Break", Break);
-        if (read != null)
+        if(beginning != null)
+        	exits.put("Break", beginning);
+        if(read != null)
         	exits.put("Read", read);
-        if (fight != null)
+        if(fight != null)
         	exits.put("Fight", fight);
-        if (back != null)
+        if(back != null)
         	exits.put("Back", back);
     }
 
@@ -146,9 +146,13 @@ class Room  implements Serializable
     		direction = "East";
     	if (direction.substring(0,1).equalsIgnoreCase("W"))
     		direction = "West";
+    	if (direction.substring(0,1).equalsIgnoreCase("U"))
+    		direction = "Up";
     	if (direction.substring(0,1).equalsIgnoreCase("B"))
     		direction = "Back";
-
+    	if (direction.substring(0,2).equalsIgnoreCase("Beg"))
+    		direction = "Beginning";
+    	
         return (Room)exits.get(direction);
     }
 
