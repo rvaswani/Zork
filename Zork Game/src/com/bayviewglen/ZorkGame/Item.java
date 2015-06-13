@@ -4,15 +4,14 @@ import java.io.Serializable;
 
 public class Item implements Serializable {
 	private String name;
-	private static double hitPoint;
-	private static double attackDamage;
-	private static double armorPenetration;
-	private static double lifeSteal;
-	private static double critChance;
-	private static double armor;
-	private static double movementSpeed;
-	private String specialAbility;
-	private int goldValue;
+	private boolean weapon;
+	private double hitPoint;
+	private double attackDamage;
+	private double armorPenetration;
+	private double lifeSteal;
+	private double critChance;
+	private double armor;
+	private double movementSpeed;
 	private String description;
 	private int weight;
 	private int amount;
@@ -25,10 +24,10 @@ public class Item implements Serializable {
 	}
 	
 	// Constructor for items that are not equipment (Notes, keys, etc)
-	public Item(String name, String description, int goldValue, int weight){
+	public Item(String name, String description, int weight){
 		this.name = name;
+		weapon = false;
 		this.description = description;
-		this.goldValue = goldValue;
 		this.weight = weight;
 		hitPoint = 0;
 		attackDamage = 0;
@@ -37,18 +36,17 @@ public class Item implements Serializable {
 		critChance = 0;
 		armor = 0;
 		movementSpeed = 0;
-		specialAbility = "";
 		amount = 1;
 	}
 
 	
 	// Constructor for equipment type items (Swords, armor, etc)
-	public Item(String name, double hitPoint, double attackDamage,
+	public Item(String name, boolean weapon, double hitPoint, double attackDamage,
 			double armorPenetration, double lifeSteal, double critChance,
-			double armor, double movementSpeed, String specialAbility, 
-			int goldValue, String description, int weight) {
+			double armor, double movementSpeed,	String description, int weight) {
 		super();
 		this.name = name;
+		this.weapon = weapon;
 		this.hitPoint = hitPoint;
 		this.attackDamage = attackDamage;
 		this.armorPenetration = armorPenetration;
@@ -56,8 +54,6 @@ public class Item implements Serializable {
 		this.critChance = critChance;
 		this.armor = armor;
 		this.movementSpeed = movementSpeed;
-		this.specialAbility = specialAbility;
-		this.goldValue = goldValue;
 		this.description = description;
 		this.weight = weight;
 		this.amount = 1;
@@ -69,41 +65,37 @@ public class Item implements Serializable {
 	public String getName() {
 		return name;
 	}
+	
+	public boolean getWeapon() {
+		return weapon;
+	}
 
-	public static double getHitPoint() {
+	public double getHitPoint() {
 		return hitPoint;
 	}
 
-	public static double getAttackDamage() {
+	public double getAttackDamage() {
 		return attackDamage;
 	}
 
-	public static double getArmorPenetration() {
+	public double getArmorPenetration() {
 		return armorPenetration;
 	}
 
-	public static double getLifeSteal() {
+	public double getLifeSteal() {
 		return lifeSteal;
 	}
 
-	public static double getCritChance() {
+	public double getCritChance() {
 		return critChance;
 	}
 
-	public static double getArmor() {
+	public double getArmor() {
 		return armor;
 	}
 
-	public static double getMovementSpeed() {
+	public double getMovementSpeed() {
 		return movementSpeed;
-	}
-
-	public String getSpecialAbility() {
-		return specialAbility;
-	}
-	
-	public int getGoldValue() {
-		return goldValue;
 	}
 
 	public String getDescription() {

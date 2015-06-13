@@ -12,9 +12,8 @@ public class Battle implements Serializable {
 	private double monsterHP;
 	private int roundCount;
 	private boolean escape;
-	private int stacksOfGold;
 	
-	private boolean result;
+	private int result;
 	
 	
 	public Battle() {
@@ -27,12 +26,10 @@ public class Battle implements Serializable {
 		playerHP = player.getHitPoint();
 		monsterHP = monster.getHitPoint();
 		roundCount = 0;
-		stacksOfGold = 0;
 		escape = player.getMovementSpeed() > monster.getMovementSpeed();
 	}
 	
 	public void fight() {
-		System.out.println(player.getName() + "\t" + monster.getName());
 		boolean done = false;
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~BATTLE BEGINS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		while (!done) {
@@ -56,6 +53,15 @@ public class Battle implements Serializable {
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~END OF BATTLE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	}
 
+	
+	// Getter for battle result
+	public int getResult() {
+		return result;
+	}
+	
+	
+	//Various methods for the battle
+	
 	private void dealDamage(double damage, boolean dodge, boolean done) {
 		
 		// Player deal damage to monster
@@ -101,7 +107,10 @@ public class Battle implements Serializable {
 	}
 
 	private void defeat() {
-		// TODO Auto-generated method stub
+		System.out.println("You lost...");
+		System.out.println("You will now go back to the beginning of this floor.");
+		player.setHitPoint(player.getMaxHitPoint());
+		result = 3;
 		
 	}
 
@@ -112,14 +121,14 @@ public class Battle implements Serializable {
 			player.levelUp();
 			System.out.println("You leveled up! Level " + (player.getLevel() - 1) + " --> Level " + player.getLevel() + ".");
 		}
-		System.out.println("You won some amount of gold!");
-		player.setWallet((int)(player.getWallet() + monster.getGoldValue() * stacksOfGold * 1.05)); 
 		player.setHitPoint(playerHP);
+		result = 1;
 		monster.die();
 	}
 
 	private void escapeBattle() {
-		// TODO Auto-generated method stub
+		System.out.println("You escaped.");
+		result = 2;
 		
 	}
 
@@ -134,8 +143,7 @@ public class Battle implements Serializable {
 		if (x == 0) {
 			return 0;
 		}else if (x == 0.05) {
-			stacksOfGold++;
-			System.out.println("You used Gold Card! You increased your gold gained for this battle!");
+			System.out.println("You used Gold Card! You scored some style points, although they don't really do anything...");
 			return 1;
 		}else if (x == 0.01) {
 			player.blackCard();
@@ -192,7 +200,7 @@ public class Battle implements Serializable {
 						}else if (x <= 35) {
 							return 0.2;			// Deal 20% Damage
 						}else if (x <= 65) {
-							return 0.05;		// 5% bonus gold
+							return 0.05;		
 						}else if (x < 85) {
 							return 0.01;		// 1% permanent stats
 						}else{

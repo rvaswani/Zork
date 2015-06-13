@@ -3,7 +3,6 @@ package com.bayviewglen.ZorkGame;
 import java.io.Serializable;
 
 public class Monster implements Serializable{
-	private String name;
 	private int level;
 	private double hitPoint;
 	private double attackDamage;
@@ -13,8 +12,6 @@ public class Monster implements Serializable{
 	private double armor;
 	private double movementSpeed;
 	private int exp;
-	private String description;
-	private int goldValue;
 	
 	private boolean dead;
 	
@@ -23,8 +20,7 @@ public class Monster implements Serializable{
 	}
 	
 	// Constructor for monster objects
-	public Monster(String name, int level, String description) {
-		this.name = name;
+	public Monster(int level) {
 		this.level = level;
 		hitPoint = level * 10;
 		attackDamage = hitPoint + 5;
@@ -34,21 +30,11 @@ public class Monster implements Serializable{
 		armor = hitPoint / 2;
 		movementSpeed = (level - 2) * 20 + 100;
 		exp = ((int)(Math.random() * 21) - 10) + (level - 1) * 50;	// Randomize the experience gained after killing each monster.
-		this.description = description;
-		goldValue = ((int)(Math.random() * 11) - 5) + level * 10;	// Randomize the amount of gold gained after killing each monster.
 		dead = false;
 	}
 
 	
 	// Various getters. Note that there is no setter because values are not supposed to be changed for a monster.
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
 	
 	public int getLevel() {
 		return level;
@@ -116,19 +102,6 @@ public class Monster implements Serializable{
 	
 	public void setExp(int exp) {
 		this.exp = exp;
-	}
-
-
-	public String getDescription() {
-		return description;
-	}
-	
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
-	public int getGoldValue() {
-		return goldValue;
 	}
 	
 	public boolean getDead() {

@@ -18,7 +18,6 @@ public class Player implements Serializable {
 	private String specialAbility;
 	private int level;
 	private int exp;
-	private int wallet;
 	private String description;
 	private HashMap<String, Item> inventory;
 	private int inventorySpace;
@@ -48,7 +47,7 @@ public class Player implements Serializable {
 		System.out.println("- Special Ability \"Pick A Card\": Draws a card from his card deck.");
 		System.out.println("\tGreen Card --> Gain 20% health. (20% Chance)");
 		System.out.println("\tRed Card --> Deal 20% enemy max health as physical damage. (20% Chance)");
-		System.out.println("\tGold Card --> Gain 5% extra gold after winning the battle. This effect can stack. (30% Chance)");
+		System.out.println("\tGold Card --> Gain some style points. Style point is a sign that you are good at this game. Be proud. (30% Chance)");
 		System.out.println("\tBlack Card --> Gain 1% increase to all stats permanently. (20% Chance)");
 		System.out.println("\tBlue Card --> Dodge enemy next attack/special ability. (15% Chance)");
 		
@@ -93,7 +92,6 @@ public class Player implements Serializable {
 		specialAbility = "";
 		level = 1;
 		exp = 0;
-		wallet = 100;
 		description = "";
 		inventory = new HashMap<String, Item>();
 		inventorySpace = 20;
@@ -216,14 +214,6 @@ public class Player implements Serializable {
 		this.exp = exp;
 	}
 
-	public int getWallet() {
-		return wallet;
-	}
-
-	public void setWallet(int wallet) {
-		this.wallet = wallet;
-	}
-
 	public String getDescription() {
 		return description;
 	}
@@ -249,67 +239,7 @@ public class Player implements Serializable {
 	}
 	
 	
-	// Various equipment type items of player
 	
-	public Item getHelmet() {
-		return helmet;
-	}
-
-
-	public Item setHelmet(Item helmet) {
-		Item oldHelmet = this.helmet;
-		this.helmet = helmet;
-		return oldHelmet;
-	}
-
-
-	public Item getSword() {
-		return sword;
-	}
-
-
-	public Item setSword(Item sword) {
-		Item oldSword = this.sword;
-		this.sword = sword;
-		return oldSword;
-	}
-
-
-	public Item getShield() {
-		return shield;
-	}
-
-
-	public Item setShield(Item shield) {
-		Item oldShield = this.shield;
-		this.shield = shield;
-		return oldShield;
-	}
-
-
-	public Item getFullBodyArmor() {
-		return fullBodyArmor;
-	}
-
-
-	public Item setFullBodyArmor(Item fullBodyArmor) {
-		Item oldFullBodyArmor = this.fullBodyArmor;
-		this.fullBodyArmor = fullBodyArmor;
-		return oldFullBodyArmor;
-	}
-
-
-	public Item getBoots() {
-		return boots;
-	}
-
-
-	public Item setBoots(Item boots) {
-		Item oldBoots = this.boots;
-		this.boots = boots;
-		return oldBoots;
-	}
-
 
 	// Various methods that interact with the player
 	
@@ -318,7 +248,6 @@ public class Player implements Serializable {
 		System.out.println("Character Type: " + choice);
 		System.out.println("Level: " + level);
 		System.out.println("Exp: " + exp + "/" + level * 100);
-		System.out.println("You have " + wallet + "gold.");
 		System.out.println("/nHP: " + hitPoint + "/" + maxHitPoint);
 		System.out.println("Armor Penetration: " + armorPenetration + "%");
 		System.out.println("Life Steal: " + lifeSteal + "%");
@@ -336,49 +265,72 @@ public class Player implements Serializable {
 		armor *= levelUpIndex;
 		movementSpeed *= levelUpIndex;
 		exp =- level * 10;
-		wallet += 100;
 		level += 1;
 	}
 	
-	// Obtain an item with specified amount
-	public void addItem(Item i, int n) {
+	// Obtain an item with specified amount. If item is weapon, add stat to player
+	public int addItem(Item i, int n) {
 		inventorySpace -= n;
-		if (inventory.containsKey(i.getName())) {
-			inventory.get(i.getName()).addAmount(n);
-		}else{
-			inventory.put(i.getName(), i);
-			inventory.get(i.getName()).addAmount(n - 1);
+		if (inventorySpace < 0) {
+			System.out.println("You cannot take this item because there is no space left in your bag!");
+			return 0;
+		} else {
+			if (inventory.containsKey(i.getName())) {
+				inventory.get(i.getName()).addAmount(n);
+			}else{
+				inventory.put(i.getName(), i);
+				inventory.get(i.getName()).addAmount(n - 1);
+			}
+			
+			if (i.getWeapon()) {
+				 maxHitPoint += i.getHitPoint();
+				 attackDamage += i.getAttackDamage();
+				 armorPenetration += i.getArmorPenetration();
+				 lifeSteal += i.getLifeSteal();
+				 critChance += i.getCritChance();
+				 armor += i.getArmor();
+				 movementSpeed += i.getMovementSpeed();
+			}
+			
+			return 1;
 		}
 	}
 	
 	// Use an item with specified amount. This method is specifically for items like potions and keys
 	public void useItem(Item i, int n) {
+		if (i.getWeapon()) {
+			System.out.println("This item is a weapon, not a consumeable item.");
+			return;
+		}
 		inventorySpace += n;
 		if (!inventory.containsKey(i.getName())) {
 			System.out.println("You do not have this item!");
+			return;
 		}else if (inventory.get(i.getName()).getAmount() != 1 && inventory.get(i.getName()).getAmount() >= n) {
 			inventory.get(i.getName()).decreaseAmount(n);
 		}else if (inventory.get(i.getName()).getAmount() != 1 && inventory.get(i.getName()).getAmount() < n) {
 			System.out.println("You do not have enough of this item to use!");
+			return;
 		}else{
 			if (n > 0) {
 				inventory.remove(i.getName());
 			}
 		}
 		
-		if ((hitPoint + Item.getHitPoint()) > maxHitPoint) {
+		if ((hitPoint + i.getHitPoint()) > maxHitPoint) {
 			hitPoint = maxHitPoint;
 		}else{
-			hitPoint += Item.getHitPoint();
+			hitPoint += i.getHitPoint();
 		}
 		
-		attackDamage += Item.getAttackDamage();
-		armorPenetration += Item.getArmorPenetration();
-		lifeSteal += Item.getLifeSteal();
-		critChance += Item.getCritChance();
-		armor += Item.getArmor();
-		movementSpeed += Item.getMovementSpeed();
+		attackDamage += i.getAttackDamage();
+		armorPenetration += i.getArmorPenetration();
+		lifeSteal += i.getLifeSteal();
+		critChance += i.getCritChance();
+		armor += i.getArmor();
+		movementSpeed += i.getMovementSpeed();
 		
+		System.out.println("You used " + i.getName() + "!");
 	}
 	
 	// "Twisted Fate" special ability

@@ -30,7 +30,7 @@ Room Name: Room 2.6
 Room Description: There is one monster standing right in front of you. However, there is a person behind the monster. Seems like he is trapped here by the monster.
 # of Monsters: 1
 Exit Rooms: N-Room 2.5
-Room Name: Room 2.7
+Room Name: Room 2.999
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next floor.
 # of Monsters: 1
 Exit Rooms: U-Room 3.1, E-Room 2.5
@@ -122,7 +122,7 @@ Room Name: Room 4.12
 Room Description: !!! There are 4 monsters in the room. They all look very aggressive. However, there is something shiny behind them...
 # of Monsters: 4
 Exit Rooms: W-Room 4.11
-Room Name: Room 4.13
+Room Name: Room 4.999
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next floor.
 # of Monsters: 1
 Exit Rooms: W-Room 4.10, U-Room 5.1
@@ -250,7 +250,7 @@ Room Name: Room 6.15
 Room Description: There is a pile of gold on the ground and a bunch of potions!
 # of Monsters: 0
 Exit Rooms: E-Room 6.14, W-Room 6.16
-Room Name: Room 6.16
+Room Name: Room 6.999
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next floor.
 # of Monsters: 1
 Exit Rooms: E-Room 6.15, U-Room 7.1
@@ -362,7 +362,7 @@ Room Name: Room 8.11
 Room Description: A pile of gold lies on the ground! A huge door is on the north side. Seems like it requires some sort of a key to unlock the door...
 # of Monsters: 0
 Exit Rooms: N-Room 8.12, S-Room 8.10
-Room Name: Room 8.12
+Room Name: Room 8.999
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next floor.
 # of Monsters: 1
 Exit Rooms: S-Room 8.11, U-Room 9.1

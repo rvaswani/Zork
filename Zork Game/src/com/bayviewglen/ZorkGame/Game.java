@@ -35,6 +35,7 @@ class Game implements Serializable
     private Room currentRoom;
     private Room lastRoom;
     private Room beginningRoom;
+    private Player player;
     // This is a MASTER object that contains all of the rooms and is easily accessible.
     // The key will be the name of the room -> no spaces (Use all caps and underscore -> Great Room would have a key of GREAT_ROOM
     // In a hashmap keys are case sensitive.
@@ -52,6 +53,15 @@ class Game implements Serializable
 				// Read the Name
 				String roomName = roomScanner.nextLine();
 				room.setRoomName(roomName.split(":")[1].trim());
+				room.setFloor(Integer.parseInt(roomName.substring(roomName.indexOf(".") - 1, roomName.indexOf("."))));
+				if (Integer.parseInt(roomName.split(".")[1]) == 999) {
+					room.setKey(true);
+					room.setFloor(room.getFloor() + 2);
+				}
+				// Read items in this room
+				String items = roomScanner.nextLine();
+				Item award = new Item(items);
+				room.setAward(award);
 				// Read the Description
 				String roomDescription = roomScanner.nextLine();
 				room.setDescription(roomDescription.split(":")[1].replaceAll("<br>", "\n").trim());
@@ -122,9 +132,13 @@ class Game implements Serializable
     {            
         printWelcome();
         
+        // New player
+        player = new Player();
+        player.printOptions();
+        player.setCharacter();
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
-                
+             
         boolean finished = false;
         while (! finished)
         {
@@ -162,6 +176,27 @@ class Game implements Serializable
         }
 
         String commandWord = command.getCommandWord();
+        
+        if (commandWord.equalsIgnoreCase("fight")) {
+        	Monster monster = new Monster(currentRoom.getFloor());
+        	Battle battle = new Battle(player, monster);
+        	battle.fight();
+        	if (battle.getResult() == 1) {
+        		currentRoom.setMonsterCount(currentRoom.getMonsterCount() - 1);
+        		if (currentRoom.getAward() != null) {
+        			int x = player.addItem(currentRoom.getAward(), 1);
+        			if (x == 1) {
+        				currentRoom.setAward(null);
+        			}
+        		}
+        	} else if (battle.getResult() == 2) {
+        		System.out.println(currentRoom.longDescription());
+        	} else {
+        		currentRoom = beginningRoom;
+        		System.out.println(beginningRoom.longDescription());
+        	}
+        }
+        
         if (commandWord.equals("help")) {
         	printHelp();
         	System.out.println(currentRoom.longDescription());
@@ -245,15 +280,27 @@ class Game implements Serializable
           	if (nextRoom == null)
         		System.out.println("There is nothing here! Search somewhere else.");
         	else {
-        		lastRoom = currentRoom; 
-        		currentRoom = nextRoom;
-        		if (direction.equalsIgnoreCase("Up") || currentRoom.getRoomName().split("\\.")[1].substring(0).equals("1")) 
-        			beginningRoom = nextRoom; 
+        		if (nextRoom.getKey()) {
+        			Item key = new Item("Key", "Key", 1);
+        			if (player.getInventory().containsValue(key)) {
+        				player.getInventory().remove(key);
+        				System.out.println("You unlocked the door with your key!");
+        			} else {
+        				System.out.println("You do not have a key to unlock this door!");
+        			}
+        		} else {
+        			lastRoom = currentRoom; 
+        			currentRoom = nextRoom;
+        			if (direction.equalsIgnoreCase("Up") || currentRoom.getRoomName().split("\\.")[1].substring(0).equals("1")) 
+        				beginningRoom = nextRoom; 
         			currentRoom = nextRoom;        			       		
-        		System.out.println(currentRoom.longDescription());
+        			System.out.println(currentRoom.longDescription());
+        		}
         	}
         }
     }
+    
+    
     public void save () throws Exception {
     	
     	// Write to disk with FileOutputStream

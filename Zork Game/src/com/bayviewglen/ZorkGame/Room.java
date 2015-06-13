@@ -24,6 +24,9 @@ class Room  implements Serializable
 	private String roomName;
     private String description;
     private int monsterCount;					// Stores the amount of monsters in this room
+    private int floor;							// Stores floor number
+    private boolean key;						// Records if this room needs a key to gain access into
+    private Item award;							// If the room is a final boss room of each floor, give player an award after beating the boss
     private HashMap<String, Room> exits;        // stores exits of this room.
 
     /**
@@ -41,6 +44,8 @@ class Room  implements Serializable
     	roomName = "DEFAULT ROOM";
     	description = "DEFAULT DESCRIPTION";
     	monsterCount = 0;
+    	floor = 0;
+    	key = false;
     	exits = new HashMap<String, Room>();
 	}
 
@@ -172,11 +177,35 @@ class Room  implements Serializable
 		this.description = description;
 	}
 	
+	public int getFloor() {
+		return floor;
+	}
+	
+	public void setFloor(int floor) {
+		this.floor = floor;
+	}
+	
 	public int getMonsterCount() {
 		return monsterCount;
 	}
 	
 	public void setMonsterCount(int monsterCount) {
 		this.monsterCount = monsterCount;
+	}
+	
+	public boolean getKey() {
+		return key;
+	}
+	
+	public void setKey(boolean key) {
+		this.key = key;
+	}
+	
+	public void setAward(Item award) {
+		this.award = award;
+	}
+	
+	public Item getAward() {
+		return award;
 	}
 }
