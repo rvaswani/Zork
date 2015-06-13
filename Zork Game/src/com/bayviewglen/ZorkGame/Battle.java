@@ -101,18 +101,18 @@ public class Battle implements Serializable {
 			victory();
 		}
 		
-		
-		// Monster deal damage to player
-		if (!dodge) {
-			playerHP -= (monster.getAttackDamage() - player.getArmor() * (1 - monster.getArmorPenetration()));
-			System.out.println("Monster dealt " + player.getArmor() * (1 - monster.getArmorPenetration()) + " damage");
-		}else{
-			System.out.println("You dodged the attack!");
+		if (monsterHP > 0) {
+			// Monster deal damage to player
+			if (!dodge) {
+				playerHP -= (monster.getAttackDamage() - player.getArmor() * (1 - monster.getArmorPenetration()));
+				System.out.println("Monster dealt " + player.getArmor() * (1 - monster.getArmorPenetration()) + " damage");
+			}else{
+				System.out.println("You dodged the attack!");
+			}
+			if (playerHP <= 0) {
+				defeat();
+			}
 		}
-		if (playerHP <= 0) {
-			defeat();
-		}
-		
 	}
 
 	private void defeat() {
@@ -197,28 +197,28 @@ public class Battle implements Serializable {
 			String action = input.nextLine();
 			if (action.equalsIgnoreCase("Attack")) {
 				return player.getAttackDamage();
-			}else if (player.getChoice().equals("Master Yi")) {
-					if (action.equalsIgnoreCase("Meditate"))
-						return -0.1;	// Negative damage means heal to player
-			}else if (player.getChoice().equals("Twisted Fate")) {
-					if (action.equalsIgnoreCase("Pick A Card")) {
-						int x = (int)(Math.random() * 100) + 1;
-						if (x <= 15) {
-							return -0.2;		// Heal 20%
-						}else if (x <= 35) {
-							return 0.2;			// Deal 20% Damage
-						}else if (x <= 65) {
-							return 0.05;		
-						}else if (x < 85) {
-							return 0.01;		// 1% permanent stats
-						}else{
-							return -100;		// Dodge next attack
-						}
-					}
-			}else if (player.getChoice().equals("Nasus")) {
-					if (action.equalsIgnoreCase("Siphoning Strike")){
-						return 0.5 * player.getAttackDamage() + 3 * player.getSiphoningStrikeCount();
-					}
+			}else if (player.getChoice().equals("Master Yi") && action.equalsIgnoreCase("Meditate")) {
+				return -0.1;	// Negative damage means heal to player
+				
+			}else if (player.getChoice().equals("Twisted Fate") && action.equalsIgnoreCase("Pick A Card")) {
+				int x = (int)(Math.random() * 100) + 1;
+				if (x <= 15) {
+					return -0.2;		// Heal 20%
+				}else if (x <= 35) {
+					return 0.2;			// Deal 20% Damage
+				}else if (x <= 65) {
+					return 0.05;		
+				}else if (x < 85) {
+					return 0.01;		// 1% permanent stats
+				}else{
+					return -100;		// Dodge next attack
+				}
+				
+			}else if (player.getChoice().equals("Nasus") && action.equalsIgnoreCase("Siphoning Strike")) {
+				double damage = 0.5 * player.getAttackDamage() + 3 * player.getSiphoningStrikeCount();
+				player.addSiphoningStrikeCount();
+				return damage;
+				
 			}else if (action.equalsIgnoreCase("Run")) {
 				if (escape) {
 					return 0;	// 0 damages means player wants to run away

@@ -31,7 +31,7 @@ import java.io.Serializable;
 
 class Game implements Serializable
 {
-    Parser parser;
+    private Parser parser;
     private Room currentRoom;
     private Room lastRoom;
     private Room beginningRoom;
@@ -160,7 +160,7 @@ class Game implements Serializable
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to League of Zork!");
+        System.out.println("Welcome to Zork 2K15!");
         System.out.println("This is the new and best RPG in the world.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
@@ -182,6 +182,10 @@ class Game implements Serializable
         String commandWord = command.getCommandWord();
         
         if (commandWord.equalsIgnoreCase("fight")) {
+        	if (currentRoom.getMonsterCount() == 0) {
+        		System.out.println("There is no monster to fight!");
+        		return false;
+        	}
         	Monster monster = new Monster(currentRoom.getFloor());
         	Battle battle = new Battle(player, monster);
         	battle.fight();
