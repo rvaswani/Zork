@@ -19,7 +19,8 @@ import java.util.Set;
 import java.util.HashMap;
 import java.util.Iterator;
 
-class Room  implements Serializable
+@SuppressWarnings("serial")
+class Room implements Serializable
 {
 	private String roomName;
     private String description;
@@ -127,7 +128,8 @@ class Room  implements Serializable
      * Return a string describing the room's exits, for example
      * "Exits: north west ".
      */
-    private String exitString()
+    @SuppressWarnings("rawtypes")
+	private String exitString()
     {
         String returnString = "Exits:";
 		Set keys = exits.keySet();

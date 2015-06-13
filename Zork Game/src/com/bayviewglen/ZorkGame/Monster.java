@@ -2,6 +2,7 @@ package com.bayviewglen.ZorkGame;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Monster implements Serializable{
 	private int level;
 	private double hitPoint;
@@ -29,7 +30,7 @@ public class Monster implements Serializable{
 		critChance = 0.01;
 		armor = hitPoint / 2;
 		movementSpeed = (level - 2) * 20 + 100;
-		exp = ((int)(Math.random() * 21) - 10) + (level - 1) * 50;	// Randomize the experience gained after killing each monster.
+		exp = ((int)(Math.random() * 10) + 1) + level * 50;	// Randomize the experience gained after killing each monster.
 		dead = false;
 	}
 

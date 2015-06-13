@@ -2,6 +2,7 @@ package com.bayviewglen.ZorkGame;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Item implements Serializable {
 	private String name;
 	private boolean weapon;

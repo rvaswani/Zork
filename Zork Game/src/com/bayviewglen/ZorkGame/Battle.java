@@ -3,6 +3,7 @@ package com.bayviewglen.ZorkGame;
 import java.io.Serializable;
 import java.util.Scanner;
 
+@SuppressWarnings("serial")
 public class Battle implements Serializable {
 	
 	private Player player;
@@ -127,7 +128,7 @@ public class Battle implements Serializable {
 		System.out.println("You won!");
 		player.setExp(monster.getExp());
 		System.out.println("You gained " + monster.getExp() + " exp!");
-		while (player.getExp() > player.getLevel() * 10) {
+		while (player.getExp() > player.getLevel() * 100) {
 			player.levelUp();
 			System.out.println("You leveled up! Level " + (player.getLevel() - 1) + " --> Level " + player.getLevel() + ".");
 		}

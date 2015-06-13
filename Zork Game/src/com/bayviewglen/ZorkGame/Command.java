@@ -25,6 +25,7 @@ import java.io.Serializable;
  * should probably be changed to be an item rather than a String.
  */
 
+@SuppressWarnings("serial")
 class Command implements Serializable
 {
     private String commandWord;

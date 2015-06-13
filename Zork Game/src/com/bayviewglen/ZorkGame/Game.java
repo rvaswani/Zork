@@ -29,6 +29,7 @@ import java.io.Serializable;
  *  commands that the parser returns.
  */
 
+@SuppressWarnings("serial")
 class Game implements Serializable
 {
     private Parser parser;
@@ -197,6 +198,7 @@ class Game implements Serializable
         				currentRoom.setAward(null);
         			}
         		}
+        		System.out.println(currentRoom.longDescription());
         	} else if (battle.getResult() == 2) {
         		System.out.println(currentRoom.longDescription());
         	} else {
