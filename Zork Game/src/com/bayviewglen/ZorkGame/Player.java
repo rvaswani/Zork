@@ -323,6 +323,7 @@ public class Player implements Serializable {
 			hitPoint += i.getHitPoint();
 		}
 		
+		maxHitPoint += i.getMaxHitPoint();
 		attackDamage += i.getAttackDamage();
 		armorPenetration += i.getArmorPenetration();
 		lifeSteal += i.getLifeSteal();
