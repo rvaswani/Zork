@@ -49,6 +49,14 @@ public class Battle implements Serializable {
 			}else{
 				dealDamage(damage, dodge, done);
 			}
+			
+			if (result == 1) 
+				done = true;
+			if (result == 2)
+				done = true;
+			if (result == 3)
+				done = true;
+			
 		}
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~END OF BATTLE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	}
@@ -83,6 +91,7 @@ public class Battle implements Serializable {
 			monsterHP -= (damage - monster.getArmor() * (1 - player.getArmorPenetration()));
 			System.out.println("You successfully dealt " + (damage - monster.getArmor() * (1 - player.getArmorPenetration())) + " damage to the monster!");
 		}
+		
 		if ((playerHP + damage * player.getLifeSteal()) >= player.getMaxHitPoint()) {
 			playerHP = player.getMaxHitPoint();
 		}else{
@@ -117,6 +126,7 @@ public class Battle implements Serializable {
 	private void victory() {
 		System.out.println("You won!");
 		player.setExp(monster.getExp());
+		System.out.println("You gained " + monster.getExp() + " exp!");
 		while (player.getExp() > player.getLevel() * 10) {
 			player.levelUp();
 			System.out.println("You leveled up! Level " + (player.getLevel() - 1) + " --> Level " + player.getLevel() + ".");
@@ -184,16 +194,14 @@ public class Battle implements Serializable {
 	private double readAction(Scanner input) {
 		boolean done = false;
 		while (!done) {
-			if (input.nextLine().equalsIgnoreCase("Attack") || Integer.parseInt(input.nextLine()) == 1) {
+			String action = input.nextLine();
+			if (action.equalsIgnoreCase("Attack")) {
 				return player.getAttackDamage();
-			}else if (input.nextLine().equalsIgnoreCase("Special Ability") || Integer.parseInt(input.nextLine()) == 2) {
-				System.out.println("Which ability?");
-				if (player.getChoice().equals("Master Yi")) {
-					if (input.nextLine().equalsIgnoreCase("Meditate"))
+			}else if (player.getChoice().equals("Master Yi")) {
+					if (action.equalsIgnoreCase("Meditate"))
 						return -0.1;	// Negative damage means heal to player
-				}
-				if (player.getChoice().equals("Twisted Fate")) {
-					if (input.nextLine().equalsIgnoreCase("Pick A Card")) {
+			}else if (player.getChoice().equals("Twisted Fate")) {
+					if (action.equalsIgnoreCase("Pick A Card")) {
 						int x = (int)(Math.random() * 100) + 1;
 						if (x <= 15) {
 							return -0.2;		// Heal 20%
@@ -207,14 +215,11 @@ public class Battle implements Serializable {
 							return -100;		// Dodge next attack
 						}
 					}
-				}
-				if (player.getChoice().equals("Nasus")) {
-					if (input.nextLine().equalsIgnoreCase("Siphoning Strike")){
+			}else if (player.getChoice().equals("Nasus")) {
+					if (action.equalsIgnoreCase("Siphoning Strike")){
 						return 0.5 * player.getAttackDamage() + 3 * player.getSiphoningStrikeCount();
 					}
-				}
-			
-			}else if (input.nextLine().equalsIgnoreCase("Run") || Integer.parseInt(input.nextLine()) == 3) {
+			}else if (action.equalsIgnoreCase("Run")) {
 				if (escape) {
 					return 0;	// 0 damages means player wants to run away
 				}else{

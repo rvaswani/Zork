@@ -24,18 +24,12 @@ public class Player implements Serializable {
 	private static double levelUpIndex = 1.2;
 	private int siphoningStrikeCount;			// Exclusive skill to character "Nasus"
 	
-	private Item helmet;
-	private Item sword;
-	private Item shield;
-	private Item fullBodyArmor;
-	private Item boots;
-	
 	
 	
 	// 3 character options for player to choose from
-	public void printOptions() {
-//		Scanner input = new Scanner(System.in);
-		//input.reset();
+	public void printOptions(Scanner scanner) {
+		// Scanner input = new Scanner(System.in);
+		// input.reset();
 		System.out.println("Before you start the game, you have 3 characters to choose from: ");
 		
 		System.out.println("1. Master Yi");
@@ -55,16 +49,18 @@ public class Player implements Serializable {
 		System.out.println("- Passive Ability \"Thirst\": Has 10% life steal on any damage dealt to an enemy.");
 		System.out.println("- Special Ability \"Siphoning Strike\": Deals 50% attack damage, but gain 3 attack damage permanently to this ability after everytime it is used.");
 		
+		System.out.println("\nWhat's your choice?");
+		
 		boolean done = false;
 		while (!done) {
-			String nextline = TESTBATTLE.input.nextLine();
-			if (nextline.equalsIgnoreCase("Master Yi") || Integer.parseInt(nextline) == 1) {
+			String nextline = scanner.nextLine();
+			if (nextline.equalsIgnoreCase("Master Yi")) {
 				choice = "Master Yi";
 				done = true;
-			}else if (nextline.equalsIgnoreCase("Twisted Fate") || Integer.parseInt(nextline) == 2) {
+			}else if (nextline.equalsIgnoreCase("Twisted Fate")) {
 				choice = "Twisted Fate";
 				done = true;
-			}else if (nextline.equalsIgnoreCase("Nasus") || Integer.parseInt(nextline) == 3) {
+			}else if (nextline.equalsIgnoreCase("Nasus")) {
 				choice = "Nasus";
 				done = true;
 			}else{
@@ -77,10 +73,10 @@ public class Player implements Serializable {
 	
 	
 	// Constructor of player class
-	public Player() {
+	public Player(Scanner scanner) {
 		//Scanner input = new Scanner(System.in);
 		System.out.println("Please enter your name: ");
-		name = TESTBATTLE.input.nextLine();
+		name = scanner.nextLine();
 		maxHitPoint = 100;
 		hitPoint = maxHitPoint;
 		attackDamage = 20;

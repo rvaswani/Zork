@@ -732,12 +732,12 @@ Room Name: Room 10.11
 HP Potion
 Room Description: You came to a bright hall. You can see the ornate decorations on the wall. You can see two doors on the side. On the far north, you can see another huge door that requires a big key. You can feel the power behind it. That's it...The final boss room. 
 # of Monsters: 0
-Exit Rooms: N-room 10.18, W-Room 10.12, E-Room 10.13
+Exit Rooms: N-room 30.999, W-Room 10.12, E-Room 10.13
 Room Name: Room 10.12
 Infinity Edge
 Room Description: There is a shiny sword on the ground. It looks gorgeous and powerful. Pick it up!
 # of Monsters: 0
-Exit Rooms: N-Room 10.11, S-Room 10.11, E-Room 10.11, W-Room 10.11
+Exit Rooms: B-Room 10.11
 Room Name: Room 10.13
 Key
 Room Description: There is a thick yet aesthetically pleasing armor on the ground. Pick it up! Also, there is a small key labelled "4" lying on the side.

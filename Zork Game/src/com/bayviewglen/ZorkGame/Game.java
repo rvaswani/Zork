@@ -31,7 +31,7 @@ import java.io.Serializable;
 
 class Game implements Serializable
 {
-    private Parser parser;
+    Parser parser;
     private Room currentRoom;
     private Room lastRoom;
     private Room beginningRoom;
@@ -53,15 +53,17 @@ class Game implements Serializable
 				// Read the Name
 				String roomName = roomScanner.nextLine();
 				room.setRoomName(roomName.split(":")[1].trim());
-				room.setFloor(Integer.parseInt(roomName.substring(roomName.indexOf(".") - 1, roomName.indexOf("."))));
-				if (Integer.parseInt(roomName.split(".")[1]) == 999) {
+				room.setFloor(Integer.parseInt(roomName.substring(roomName.indexOf(".") - 2, roomName.indexOf(".")).trim()));
+				if (Integer.parseInt(roomName.substring(roomName.indexOf(".") + 1)) == 999) {
 					room.setKey(true);
 					room.setFloor(room.getFloor() + 2);
 				}
 				// Read items in this room
 				String items = roomScanner.nextLine();
-				Item award = new Item(items);
-				room.setAward(award);
+				if (!items.equals("")) {
+					Item award = new Item(items);
+					room.setAward(award);
+				}
 				// Read the Description
 				String roomDescription = roomScanner.nextLine();
 				room.setDescription(roomDescription.split(":")[1].replaceAll("<br>", "\n").trim());
@@ -130,12 +132,15 @@ class Game implements Serializable
      */
     public void play() 
     {            
+    	Scanner scanner = new Scanner(System.in);
         printWelcome();
         
         // New player
-        player = new Player();
-        player.printOptions();
+        player = new Player(scanner);
+        player.printOptions(scanner);
         player.setCharacter();
+        
+        System.out.println(currentRoom.longDescription());
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
              
@@ -159,7 +164,6 @@ class Game implements Serializable
         System.out.println("This is the new and best RPG in the world.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
-        System.out.println(currentRoom.longDescription());
     }
 
     /**
@@ -270,7 +274,7 @@ class Game implements Serializable
         	beginningRoom = newTemp;
         	System.out.println(currentRoom.longDescription());
         }else{
-            if (currentRoom.getMonsterCount() > 1) {
+            if (currentRoom.getMonsterCount() >= 1) {
             	System.out.println("You have to fight to leave this room!");
             	return;
             }
