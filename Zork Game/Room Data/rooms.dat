@@ -4,8 +4,8 @@ Room Description:  You are in a hallway. In front of you lies a staircase.
 # of Monsters: 0
 Exit Rooms: N-Room 1.2
 Room Name: Room 1.2
-
-Room Description: You need to fight the guard to go through the stairs
+M16
+Room Description: FINAL BOSS ROOM! You need to fight the guard to go through the stairs
 # of Monsters: 1
 Exit Rooms: U-Room 2.1
 Room Name: Room 2.1
@@ -24,22 +24,22 @@ Room Description: This is another dark room with nothing but a pile of gold on t
 # of Monsters: 0
 Exit Rooms: N-Room 2.2
 Room Name: Room 2.4
-
-Room Description: This is a huge room. There is a grand piano and a window.
+Key
+Room Description: This is a huge room. There is a grand piano and a window. Piano looks weird... You found a key on the piano! Pick it up!
 # of Monsters: 0 
 Exit Rooms: W-Room 2.5, S-Room 2.2
 Room Name: Room 2.5
 
 Room Description: There is nothing except a monster guarding the doors again. There is one door on the west and one door on the south.
 # of Monsters: 1
-Exit Rooms: S-Room 2.6, W-Room 2.7, E-Room 2.4
+Exit Rooms: S-Room 2.6, W-Room 2.999, E-Room 2.4
 Room Name: Room 2.6
-
-Room Description: There is one monster standing right in front of you. However, there is a person behind the monster. Seems like he is trapped here by the monster.
+HP Potion
+Room Description: There is one monster standing right in front of you. However, there is a potion behind the monster.
 # of Monsters: 1
 Exit Rooms: N-Room 2.5
 Room Name: Room 2.999
-
+Pantheon's Helmet
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next floor.
 # of Monsters: 1
 Exit Rooms: U-Room 3.1, E-Room 2.5
@@ -64,7 +64,7 @@ Room Description:  In the hallway...
 # of Monsters: 0
 Exit Rooms: S-Room 3.5, N-Room 3.6, W-3.3
 Room Name: Room 3.5
-
+AD Potion
 Room Description: THIS ROOM HAS A TREASURE BOX!! ... You found a potion!
 # of Monsters: 0
 Exit Rooms: N-Room 3.4
@@ -79,28 +79,23 @@ Room Description:  There are two doors adjacent to you.
 # of Monsters: 0
 Exit Rooms: S-Room 3.8, W-Room 3.999, E-Room 3.6
 Room Name: Room 3.8
-
+Max HP Potion
 Room Description:  There are the monsters! Kill them and get a potion!
 # of Monsters: 2
-Exit Rooms: N-Room 3.7
+Exit Rooms: N-Room 3.999
 Room Name: Room 3.999
-
-Room Description:  There is a guard and the staircase right behind him. 
+Combat Axe
+Room Description: FINAL BOSS ROOM! There is a guard and the staircase right behind him. 
 # of Monsters: 2
-Exit Rooms: N-Room 3.7
-Room Name: Room 3.9
-
-Room Description:  There is a guard and a staircase right behind him. (FIGHT)
-# of Monsters: 1
-Exit Rooms: U-Room 4.1, E-Room 3.7
+Exit Rooms: U-Room 4.1
 Room Name: Room 4.1
 
 Room Description: Welcome to the fourth floor. You are in a hallway with doors on the west and east side. There is one table and a mirror on the wall to the north of you.
 # of Monsters: 0
 Exit Rooms: E-Room 4.2, W-Room 4.3
 Room Name: Room 4.2
-
-Room Description: This room looks like a kitchen. There is a dining table and a fridge in the room. There is one monster guarding the door on the north. There is another monster looking outside the window on the east. This monster looks special...
+Movement Speed Potion
+Room Description: This room looks like a kitchen. There is a dining table and a fridge in the room. There is one monster guarding the door on the north. There is another monster looking outside the window on the east. This monster looks special... Fight him and get his potion!
 # of Monsters: 2
 Exit Rooms: N-Room 4.4, W-Room 4.1
 Room Name: Room 4.3
@@ -119,8 +114,8 @@ Room Description: This is a room with another monster in it. There is a door on 
 # of Monsters: 1 
 Exit Rooms: N-Room 4.9, W-Room 4.4
 Room Name: Room 4.6
-
-Room Description: THis is a big room with one monster standing in the middle. This monster looks weak...
+HP Potion
+Room Description: This is a big room with one monster standing in the middle. This monster has a potion!
 # of Monsters: 1
 Exit Rooms: E-Room 4.4
 Room Name: Room 4.7
@@ -130,9 +125,9 @@ Room Description: This is a room with a window on the left. There is one monster
 Exit Rooms: S-Room 4.7
 Room Name: Room 4.8
 
-Room Description: This is the balcony. You can see the blue sky and the sun and feel the chilling wind. There is a note on the ground. There are two windows on the wall of the building. One of them is very small, and one of them is big and looks brittle...
+Room Description: This is the balcony. You can see the blue sky and the sun and feel the chilling wind.
 # of Monsters: 0
-Exit Rooms: E-Room 4.3, N-Room 4.12
+Exit Rooms: E-Room 4.3, N-Room 4.11
 Room Name: Room 4.9
 Key
 Room Description: There is one big monster guarding a key. Nothing else is in the room. The monster looks creepy...
@@ -150,11 +145,11 @@ Room Description: Great job breaking the window! You entered this room with noth
 Exit Rooms: S-Room 4.8, E-Room 4.12
 Room Name: Room 4.12
 AD Potion
-Room Description: !!! There are 4 monsters in the room. They all look very aggressive. However, there is something shiny behind them...
+Room Description: !!! There are 4 monsters in the room. They all look very aggressive. However, there is something behind them...
 # of Monsters: 4
 Exit Rooms: W-Room 4.11
 Room Name: Room 4.999
-
+Blade of the Ruined King
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next floor.
 # of Monsters: 1
 Exit Rooms: W-Room 4.10, U-Room 5.1
@@ -204,12 +199,12 @@ Room Description: There is a door in front of you. Enter at your own risk.
 # of Monsters: 0
 Exit Rooms: O-Room 5.9, S-Room 5.6
 Room Name: Room 5.9
-
-Room Description: There is a specially trained monster... waiting for your presence.
+HP Potion
+Room Description: There is a specially trained monster... waiting for your presence. He also has a potion!
 # of Monsters: 1
 Exit Rooms: N-Room 5.999, S-Room 5.8
 Room Name: Room 5.999
-
+Braum's Shield
 Room Description: There is a staircase in front of you
 # of Monsters: 1
 Exit Rooms: U-Room 6.1
@@ -254,8 +249,8 @@ Room Description: This is another empty room with a monster in the middle. There
 # of Monsters: 1
 Exit Rooms: W-Room 6.2, N-Room 6.8, E-Room 6.4
 Room Name: Room 6.4
-
-Room Description: There is one monster in the room. Behind the monster, there is a special note on the ground.
+AD Potion
+Room Description: There is one monster in the room. Behind the monster, there is a special potion on the ground.
 # of Monsters: 1
 Exit Rooms: W-Room 6.3
 Room Name: Room 6.5
@@ -272,37 +267,37 @@ Room Name: Room 6.7
 
 Room Description: There is only this monster inside the room. There is a huge door on the wall behind him, but it seems like it requires some sort of a key...
 # of Monsters: 1
-Exit Rooms: N-Room 6.16, S-Room 6.6
+Exit Rooms: N-Room 6.999, S-Room 6.6
 Room Name: Room 6.8
 
 Room Description: This room looks like a living room. There is a TV on the wall, a carpet on the floor, and a sofa on the right. The carpet looks huge and looks like it is covering something...
 # of Monsters: 0
-Exit Rooms: E-Room 6.9, N-Room 6.19, S-Room 6.8
+Exit Rooms: D-Room 6.9, N-Room 6.19, S-Room 6.8
 Room Name: Room 6.9
-
-Room Description: You entered a secret room! There are three monsters guarding someone. There is also a note on the ground behind the monsters... Beat the monsters to save the guy!
+Max HP Potion
+Room Description: You entered a secret room! There are three monsters guarding some precious potion!
 # of Monsters: 3
-Exit Rooms: E-Room 6.8
+Exit Rooms: U-Room 6.8
 Room Name: Room 6.10
 
 Room Description: One monster stands in the middle of the room. There is one door to the west and one door to the north.
 # of Monsters: 1
 Exit Rooms: N-Room 6.11, W-Room 6.14, S-Room 6.8
 Room Name: Room 6.11
-
-Room Description: There is one monster guarding something shiny behind him... There is one door to the north that leads to a balcony.
+Armor Potion
+Room Description: There is one monster guarding something behind him... There is one door to the north that leads to a balcony.
 # of Monsters: 1
 Exit Rooms: S-Room 6.10, N-Room 6.12
 Room Name: Room 6.12
-
-Room Description: There's nothing but gold on the balcony. However, there is a door on the south...
+HP Potion
+Room Description: There's nothing but potion on the balcony. However, there is a door on the south...
 # of Monsters: 0
-Exit Rooms: S-Room 6.11, WS-Room 6.13
+Exit Rooms: S-Room 6.11, W-Room 6.13
 Room Name: Room 6.13
-
+Key
 Room Description: There is a monster guarding a key. Beat him to get the key!
 # of Monsters: 1
-Exit Rooms: N-Room 6.12
+Exit Rooms: E-Room 6.12
 Room Name: Room 6.14
 
 Room Description: Empty room...one door to the west.
@@ -310,11 +305,11 @@ Room Description: Empty room...one door to the west.
 Exit Rooms: W-Room 6.15, E-Room 6.10
 Room Name: Room 6.15
 
-Room Description: There is a pile of gold on the ground and a bunch of potions!
+Room Description: There is a potion on the ground!
 # of Monsters: 0
-Exit Rooms: E-Room 6.14, W-Room 6.16
+Exit Rooms: E-Room 6.14, W-Room 6.999
 Room Name: Room 6.999
-
+Boots of Swiftness
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next floor.
 # of Monsters: 1
 Exit Rooms: E-Room 6.15, U-Room 7.1
@@ -329,8 +324,8 @@ Room Description: You are at the seventh floor entrance... There is a circular h
 # of Monsters: 0
 Room Exists: W-Room 7.2, E-Room 7.3, N-Room 7.4
 Room Name: Room 7.2
-
-Room Description: Room is filled with monsters.
+Movement Speed Potion
+Room Description: Room is filled with monsters. Beat them and get a potion!
 # of Monsters: 5
 Exit Rooms: E-Room 7.10
 Room Name: Room 7.3
@@ -344,7 +339,7 @@ Room Description: Oh what?!! A monster is in it!
 # of Monsters: 1
 Exit Rooms: W-Room 7.10
 Room Name: Room 7.4
-
+AD Potion
 Room Description: There is a circular table with a potion on top.
 # of Monsters: 0
 Exit Rooms: L-Room 7.41, S-Room 7.10, W-Room 7.5, E-Room 7.6, N-Room 7.7
@@ -375,7 +370,7 @@ Room Description:  Oh look... another door.
 Exit Rooms: O-Room 7.70, S-7.40
 Room Name: Room 7.70
 
-Room Description: Door isn't even opening... it's a fake.
+Room Description: Door isn't even opening... it's a fake door.
 # of Monsters: 0
 Exit Rooms: S-Room 7.8
 Room Name: Room 7.8
@@ -394,8 +389,8 @@ Room Description: There is one monster... but looks dead....... Nevermind.
 # of Monsters: 1
 Exit Rooms: E-Room 7.40, N-Room 7.999
 Room Name: Room 7.999
-
-Room Description: Woah... there's the staircase!! Oh wait, but there's two monsters guarding it.
+Warmog's Armor
+Room Description: FINAL BOSS ROOM! Woah... there's the staircase!! Oh wait, but there's two monsters guarding it.
 # of Monsters: 2
 Exit Rooms: S-Room 7.5, U-Room 8.1
 Room Name: Room 8.1
@@ -405,12 +400,12 @@ Room Description: Welcome to the eighth floor. You are in a hall way, with only 
 Exit Rooms: N-Room 8.2
 Room Name: Room 8.2
 
-Room Description: There is nothing in the room. One door is right in front of you. However, you suddenly see arrows shooting at you! (DODGE)
+Room Description: There is nothing in the room. One door is right in front of you. However, you suddenly see arrows shooting at you! Run to next room!
 # of Monsters: 0
 Exit Rooms: N-Room 8.3, S-Room 8.1
 Room Name: Room 8.3
 
-Room Description: There is a monster in the room, guarding the only door to the north.
+Room Description: You escaped the deadly room! However, there is a monster in this room, guarding the only door to the north.
 # of Monsters: 1 
 Exit Rooms: N-Room 8.4, S-Room 8.2
 Room Name: Room 8.4
@@ -434,13 +429,13 @@ Room Description: Another monster. Fight to get to the last room!
 # of Monsters: 1
 Exit Rooms: E-Room 8.6, W-Room 8.8
 Room Name: Room 8.8
-
+Key
 Room Description: A monster is guarding a key! Beat the monster to get the key!
 # of Monsters: 1
 Exit Rooms: E-Room 8.7
 Room Name: Room 8.9
 
-Room Description: This is an empty room. But wait! You see an arrow shooting at you again! (DODGE)
+Room Description: This is an empty room. But wait! You see an arrow shooting at you again! Run!
 # of Monsters: 0
 Exit Rooms: S-Room 8.4, N-Room 8.10
 Room Name: Room 8.10
@@ -454,7 +449,7 @@ Room Description: A pile of gold lies on the ground! A huge door is on the north
 # of Monsters: 0
 Exit Rooms: N-Room 8.12, S-Room 8.10
 Room Name: Room 8.999
-
+M4A1
 Room Description: FINAL BOSS ROOM! Beat the boss to move on to the next floor.
 # of Monsters: 1
 Exit Rooms: S-Room 8.11, U-Room 9.1
@@ -477,7 +472,7 @@ Room Name: Room 8.16
 
 Room Description: Sorry, you have entered the trap room. You see a thousand arrows coming at you at the same time. You died...
 # of Monsters: 0
-Exit Rooms: U-Room 00
+Exit Rooms: N-Room 8.1, S-Room 8.1, W-Room 8.1, E-Room 8.1
 Room Name: Room 9.1
 
 Room Description: Welcome to the ninth floor... One more floor away... Keep Fighting!!!
@@ -514,7 +509,7 @@ Room Description: You are in the left-wing hallway.
 # of Monsters: 0
 Exit Rooms: S-Room 9.221, E-Room 9.7
 Room Name: Room 9.3
-
+Max HP Potion
 Room Description: Room seems empty. Oh look... a potion!
 # of Monsters: 0
 Exit Rooms: E-Room 9.31, W-Room 9.01
@@ -529,7 +524,7 @@ Room Description: Ohh look... a door!
 # of Monsters: 0
 Exit Rooms: O-Room 9.32, W-Room 9.01
 Room Name: Room 9.32
-
+Armor Potion
 Room Description: Two monsters... show 'em who's boss and get their potion!
 # of Monsters: 2
 Exit Rooms: S-Room 9.30, W-Room 9.4
@@ -554,13 +549,13 @@ Room Description: You are back in the room with the desk.
 # of Monsters: 0
 Exit Rooms: N-Room 9.7, E-Room 9.4
 Room Name: Room 9.51
-Armor Potion
+Movement Speed Potion
 Room Description: You found a potion!
 # of Monsters: 0
 Exit Rooms: N-Room 9.7, W-Room 9.4
 Room Name: Room 9.7
-
-Room Description: You are in the west-wing hallway.
+HP Potion
+Room Description: You are in the west-wing hallway. A potion on the floor...
 # of Monsters: 0
 Exit Rooms: W-Room 9.23, E-Room 9.6, S-Room 9.50
 Room Name: Room 9.6
@@ -584,8 +579,8 @@ Room Description: It's a picture with a message below it...
 # of Monsters: 0
 Exit Rooms: W-Room 9.10, R-Room 9.1002
 Room Name: Room 9.1002
-
-Room Description: "I can't be stopped. I'm too big... Too strong... Too good." -Mr. DesLauriers  (You just got a potion)
+AD Potion
+Room Description: "I can't be stopped. I'm too big... Too powerful... Too good." With a dark image of the Evil Master in mask. You also found a potion.
 # of Monsters: 0
 Exit Rooms: W-Room 9.10
 Room Name: Room 9.8
@@ -669,8 +664,8 @@ Room Description: More dead monsters...
 # of Monsters: 0
 Exit Rooms: S-Room 9.999
 Room Name: Room 9.999
-
-Room Description: Finally... the final flight of stairs... huh? No monster?? ..................... Nevermind, here it is.
+AWM
+Room Description: FINAL BOSS ROOM! Finally... the final flight of stairs... huh? No monster?? ..................... Nevermind, here it is.
 # of Monsters: 1
 Exit Rooms: U-Room 10.1
 Room Name: Room 10.1
@@ -685,7 +680,7 @@ Room Description: This is an empty room with a sign next to the door on the west
 Exit Rooms: W-Room 10.3, E-Room 10.1
 Room Name: Room 10.3
 
-Room Description: After passing through the door, you found that you are no long in a room setting. You are in a cemetery. You can see crosses everywhere. A huge blood moon is on the sky...It is very scary, but you know you have to pass through to get to the next door on the west.
+Room Description: After passing through the door, you found that you are no longer in a room setting. You are in a cemetery. You can see crosses everywhere. A huge blood moon is on the sky...It is very scary, but you know you have to pass through to get to the next door on the west.
 # of Monsters: 10 
 Exit Rooms: W-Room 10.4
 Room Name: Room 10.4
@@ -705,7 +700,7 @@ Room Description: This is an empty room with a sign next to the door on the east
 Exit Rooms: W-Room 10.1, E-Room 10.7
 Room Name: Room 10.7
 
-Room Description: After passing through the door, you found that you are no longer in a room setting. You are in a desert. You can see nothing but sand, and the bright red sun on top of you. It definitely is hot and exhausting, but you know you ahve to pass through to get to the next door on the east.
+Room Description: After passing through the door, you found that you are no longer in a room setting. You are in a desert. You can see nothing but sand, and the bright red sun on top of you. It definitely is hot and exhausting, but you know you have to pass through to get to the next door on the east.
 # of Monsters: 10
 Exit Rooms: E-Room 10.8
 Room Name: Room 10.8
@@ -725,9 +720,9 @@ Room Description: After passing through the door, you found that you are no long
 Exit Rooms: N-Room 10.11
 Room Name: Room 10.11
 HP Potion
-Room Description: You came to a bright hall. You can see the ornate decorations on the wall. You can see two doors on the side. On the far north, you can see another huge door that requires a big key. You can feel the power behind it. That's it...The final boss room. 
+Room Description: You came to a bright hall. You can see the ornate decorations on the wall. You can see two doors on the side. On the far north, you can see another huge door that requires a big key. You can feel the power behind it. That's it...The final boss room. Oh by the way, there is a potion!
 # of Monsters: 0
-Exit Rooms: N-room 30.999, W-Room 10.12, E-Room 10.13
+Exit Rooms: N-room 10.999, W-Room 10.12, E-Room 10.13
 Room Name: Room 10.12
 Infinity Edge
 Room Description: There is a shiny sword on the ground. It looks gorgeous and powerful. Pick it up!
@@ -738,8 +733,13 @@ Key
 Room Description: There is a thick yet aesthetically pleasing armor on the ground. Pick it up! Also, there is a small key labelled "4" lying on the side.
 # of Monsters: 0
 Exit Rooms: B-Room 10.11
-Room Name: 30.999
+Room Name: 10.999
 
-Room Description: Here you are...with the final boss right in front of you, sitting on the golden throne. You are shocked to see his face. \n"Mr.DesLauriers?!"\n"Hahahaha..Come at me with all your might. But i can crush you with my pinky finger."\nHere comes the FINAL BATTLE!!!
+Room Description: Here you are...with the final boss right in front of you, sitting on the golden throne. You are shocked to see his face. \n"Mr.DesLauriers?!"\n\"Hahahaha..Come at me with all your might. But i can crush you with my pinky finger."\nHere comes the FINAL BATTLE!!!
 # of Monsters: 1 
+Exit Rooms: U-Room 00
+Room Name: 0.00
+
+Room Description: GAME END
+# of Monsters: 0
 Exit Rooms: U-Room 00

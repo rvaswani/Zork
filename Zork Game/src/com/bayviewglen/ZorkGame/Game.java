@@ -132,8 +132,9 @@ class Game implements Serializable
 
     /**
      *  Main play routine.  Loops until end of play.
+     * @throws InterruptedException 
      */
-    public void play() 
+    public void play() throws InterruptedException 
     {            
     	Scanner scanner = new Scanner(System.in);
         printWelcome();
@@ -148,7 +149,7 @@ class Game implements Serializable
         // execute them until the game is over.
              
         boolean finished = false;
-        while (! finished)
+        while (!finished)
         {
             Command command = parser.getCommand();
             finished = processCommand(command);
@@ -159,13 +160,21 @@ class Game implements Serializable
     
     /**
      * Print out the opening message for the player.
+     * @throws InterruptedException 
      */
-    private void printWelcome()
+    private void printWelcome() throws InterruptedException
     {
         System.out.println();
         System.out.println("Welcome to Zork 2K15!");
-        System.out.println("This is the new and best RPG in the world.");
+        Thread.sleep(1500);
+        System.out.println("This is the new and best text-based RPG in the world!");
+        Thread.sleep(1500);
+        System.out.println("Brought to you by: Coding Master Daniel Yan & CF Master Rishi Vaswani!");
+        Thread.sleep(1500);
         System.out.println("Type 'help' if you need help.");
+        Thread.sleep(1500);
+        System.out.println("Have fun!!!");
+        Thread.sleep(1500);
         System.out.println();
     }
 
@@ -305,6 +314,11 @@ class Game implements Serializable
         	player.checkStats();
         }  
         
+        if (currentRoom.getDescription().equals("GAME END")) {
+        	System.out.println("Congratulations on completing the game! If you liked it, awesome! You can try a different character! Also, you can get a certificate of completion! Just email zyan@bayviewglen.ca!");
+        	System.out.println("Type \"quit\" to quit");
+        	return true;
+        }
         return false;
        
     }
