@@ -303,36 +303,75 @@ public class Player implements Serializable {
 			System.out.println("This item is a weapon, not a consumeable item.");
 			return;
 		}
-		inventorySpace += n;
+		
 		if (!inventory.containsKey(i.getName())) {
 			System.out.println("You do not have this item!");
 			return;
 		}else if (inventory.get(i.getName()).getAmount() != 1 && inventory.get(i.getName()).getAmount() >= n) {
 			inventory.get(i.getName()).decreaseAmount(n);
+			inventorySpace += n;
+			System.out.println("You used " + n + " unit(s) of " + i.getName() + "!");
 		}else if (inventory.get(i.getName()).getAmount() != 1 && inventory.get(i.getName()).getAmount() < n) {
 			System.out.println("You do not have enough of this item to use!");
 			return;
 		}else{
 			if (n > 0) {
 				inventory.remove(i.getName());
+				System.out.println("You used all of your " + i.getName() + "!");
+				inventorySpace += n;
 			}
 		}
 		
-		if ((hitPoint + i.getHitPoint()) > maxHitPoint) {
+		if ((hitPoint + i.getHitPoint() * n) > maxHitPoint) {
 			hitPoint = maxHitPoint;
 		}else{
-			hitPoint += i.getHitPoint();
+			hitPoint += i.getHitPoint() * n;
 		}
 		
-		maxHitPoint += i.getMaxHitPoint();
-		attackDamage += i.getAttackDamage();
-		armorPenetration += i.getArmorPenetration();
-		lifeSteal += i.getLifeSteal();
-		critChance += i.getCritChance();
-		armor += i.getArmor();
-		movementSpeed += i.getMovementSpeed();
-		
-		System.out.println("You used " + i.getName() + "!");
+		maxHitPoint += i.getMaxHitPoint() * n;
+		attackDamage += i.getAttackDamage() * n;
+		armorPenetration += i.getArmorPenetration() * n;
+		lifeSteal += i.getLifeSteal() * n;
+		critChance += i.getCritChance() * n;
+		armor += i.getArmor() * n;
+		movementSpeed += i.getMovementSpeed() * n;
+	}
+	
+	
+	
+	public void throwAwayItem(Item i, int n) {
+		if (i.getWeapon()) {
+			if (n != 1) {
+				System.out.println("You do not have more than 1 unit of this item.");
+				return;
+			}
+			maxHitPoint -= i.getMaxHitPoint();
+			attackDamage -= i.getAttackDamage();
+			armorPenetration -= i.getArmorPenetration();
+			lifeSteal -= i.getLifeSteal();
+			critChance -= i.getCritChance();
+			armor -= i.getArmor();
+			movementSpeed -= i.getMovementSpeed();
+			inventorySpace += i.getWeight();
+		}else{
+			if (!inventory.containsKey(i.getName())) {
+				System.out.println("You do not have this item!");
+				return;
+			}else if (inventory.get(i.getName()).getAmount() != 1 && inventory.get(i.getName()).getAmount() >= n) {
+				inventory.get(i.getName()).decreaseAmount(n);
+				inventorySpace += n;
+				System.out.println("You threw away " + n + " unit(s) of " + i.getName() + "!");
+			}else if (inventory.get(i.getName()).getAmount() != 1 && inventory.get(i.getName()).getAmount() < n) {
+				System.out.println("You do not have enough of this item to throw away!");
+				return;
+			}else{
+				if (n > 0) {
+					inventory.remove(i.getName());
+					System.out.println("You threw away all of your " + i.getName() + "!");
+					inventorySpace += n;
+				}
+			}
+		}
 	}
 	
 	// "Twisted Fate" special ability

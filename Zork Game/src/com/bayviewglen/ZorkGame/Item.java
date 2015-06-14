@@ -392,5 +392,35 @@ public class Item implements Serializable {
 	public void decreaseAmount(int n) {
 		amount -= n;
 	}
+
+	public void printAll() {
+		if (weapon) {
+			System.out.println("\tType: Weapon");
+		}else if (!weapon && name.equals("key")){
+			System.out.println("\tType: Key");
+		}else{
+			System.out.println("\tType: Consumable");
+		}
+		
+		if (hitPoint != 0) 
+			System.out.println("HP :" + hitPoint);
+		if (maxHitPoint != 0)
+			System.out.println("Max HP: " + maxHitPoint);
+		if (attackDamage != 0)
+			System.out.println("AD: " + attackDamage);
+		if (armorPenetration != 0)
+			System.out.println("Armor Penetration: " + armorPenetration);
+		if (lifeSteal != 0)
+			System.out.println("Life Steal: " + lifeSteal);
+		if (critChance != 0)
+			System.out.println("Critical Strike Chance: " + critChance);
+		if (armor != 0)
+			System.out.println("Armor: " + armor);
+		if (movementSpeed != 0)
+			System.out.println("Movement Speed: " + movementSpeed);
+		System.out.println(description);
+		System.out.println("Weight: " + weight);
+		System.out.println("Amount: " + amount);	
+	}
 	
 }

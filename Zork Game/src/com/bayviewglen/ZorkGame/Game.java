@@ -215,11 +215,11 @@ class Game implements Serializable
         	}
         }
         
-        if (commandWord.equals("help")) {
+        if (commandWord.equalsIgnoreCase("help")) {
         	printHelp();
         	System.out.println(currentRoom.longDescription());
         }
-        else if (commandWord.equals("save")) {
+        else if (commandWord.equalsIgnoreCase("save")) {
 			try {
 				save();
 				System.out.println(currentRoom.longDescription());
@@ -227,7 +227,7 @@ class Game implements Serializable
 				e.printStackTrace();
 			}
         }
-        else if (commandWord.equals("load")) {
+        else if (commandWord.equalsIgnoreCase("load")) {
         	Game loadedGame;
 			try {
 				loadedGame = load();
@@ -238,9 +238,20 @@ class Game implements Serializable
 			}
 					
         }
-        else if (commandWord.equals("go"))
+        else if (commandWord.equalsIgnoreCase("Pick"))
+        {
+        	if (currentRoom.getMonsterCount() != 0) {
+        		System.out.println("You have beat the monster to pick up anything!");
+        	}else{
+        		player.addItem(currentRoom.getAward(), 1);
+        		System.out.println("You picked up " + currentRoom.getAward().getName() + "!");
+        	}
+        }
+        else if (commandWord.equalsIgnoreCase("go"))
             goRoom(command);
-        else if (commandWord.equals("quit"))
+        else if (commandWord.equalsIgnoreCase("Inventory"))
+        	inventory(command);
+        else if (commandWord.equalsIgnoreCase("quit"))
         {
             if(command.hasSecondWord())
                 System.out.println("Quit what?");
@@ -255,10 +266,54 @@ class Game implements Serializable
        
     }
 
-    private void printHelp() {
+    private void inventory(Command command) {
+    	if(!command.hasSecondWord())
+        {
+            // if there is no second word, we don't know what else player wants to do with inventory
+            System.out.println("You have: ");
+            for (String str : player.getInventory().keySet()) {
+            	System.out.println(player.getInventory().get(str).getName() + ":");
+            	player.getInventory().get(str).printAll();
+            }
+            
+            String action = command.getSecondWord();
+            if (action.equalsIgnoreCase("Use")) {
+            	System.out.println("Use what? How many? (item name, amount)");
+            	Scanner input = new Scanner(System.in);
+            	try {
+            		String nextLine = input.nextLine();
+            		String name = nextLine.substring(0, nextLine.indexOf(","));
+            		int amount = Integer.parseInt(nextLine.substring(nextLine.indexOf(",") + 1).trim());
+            		player.useItem(player.getInventory().get(name), amount);
+            	}catch (ArrayIndexOutOfBoundsException ex) {
+            		System.out.println("Please enter in proper form (name, amount)");
+            	}
+            	return;
+            } else if (action.equalsIgnoreCase("Throw")) {
+            	System.out.println("Throw what? How many? (item name, amount)");
+            	Scanner input = new Scanner(System.in);
+            	try {
+            		String nextLine = input.nextLine();
+            		String name = nextLine.substring(0, nextLine.indexOf(","));
+            		int amount = Integer.parseInt(nextLine.substring(nextLine.indexOf(",") + 1).trim());
+            		player.throwAwayItem(player.getInventory().get(name), amount);
+            	}catch (ArrayIndexOutOfBoundsException ex) {
+            		System.out.println("Please enter in proper form (name, amount)");
+            	}
+            	return;
+            } else {
+            	System.out.println("Please enter proper action!");
+            	return;
+            }
+
+        }
+		
+	}
+
+	private void printHelp() {
     		System.out.println("\nYou have several difference commands you can use to complete game:");
     		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    		System.out.println("1. Go + \n    a. North  \n    b. South  \n    c. East  \n    d. West  \n    e. Up  \n    f. Down  \n    g. Open  \n    h. Look  \n    i. Back  \n    j. Beginning  \n    k. Read  \n2. Fight  \n3. Stats  \n4. Pick up  \n5. Save  \n6. Load  \n7. Quit\n");
+    		System.out.println("1. Go + \n    a. North  \n    b. South  \n    c. East  \n    d. West  \n    e. Up  \n    f. Down  \n    g. Open  \n    h. Look  \n    i. Back  \n    j. Beginning  \n    k. Read\n2. Fight  \n3. Stats  \n4. Pick up  \n5. Inventory + \n    a. Use  \n    b. Throw\n6. Save  \n7. Load  \n8. Quit\n");
    			System.out.println("\nYou are in the headquarters of Evil Monster King. Each floor gets progressively harder with monsters wanting to kill you.");
    			System.out.println("You must fight your way through and collect keys in order to get to the boss round on each floor. Along the way, you will find items ");
    			System.out.println("such as potions, which will be stored in your limited inventory, and if you ever get lost, don't worry, just type \"go back\" to go back ");
