@@ -169,7 +169,7 @@ class Game implements Serializable
         Thread.sleep(1500);
         System.out.println("This is the new and best text-based RPG in the world!");
         Thread.sleep(1500);
-        System.out.println("Brought to you by: Coding Master Daniel Yan & CF Master Rishi Vaswani!");
+        System.out.println("Brought to you by: Coding Master Daniel Yan & CrossFire Master Rishi Vaswani!");
         Thread.sleep(1500);
         System.out.println("Type 'help' if you need help.");
         Thread.sleep(1500);
