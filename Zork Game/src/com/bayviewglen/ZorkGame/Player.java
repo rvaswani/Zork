@@ -251,7 +251,11 @@ public class Player implements Serializable {
 		System.out.println("Crit. Chance: " + critChance + "%");
 		System.out.println("Armor: " + armor);
 		System.out.println("Movement Speed: " + movementSpeed);
-		System.out.println(specialAbility);
+		System.out.println("Special Abilities: " + specialAbility);
+		if (choice.equals("Nasus")) {
+			System.out.println("Siphoning Strike Stacks: " + siphoningStrikeCount);
+		}
+		System.out.println("");
 	}
 	
 	// Level up 

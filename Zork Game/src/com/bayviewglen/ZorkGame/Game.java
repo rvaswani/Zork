@@ -182,6 +182,14 @@ class Game implements Serializable
 
         String commandWord = command.getCommandWord();
         
+        // Cheat code
+        if (commandWord.equals("GODMODE")) {
+        	for (int i = 0; i < 100000; i++) {
+        		player.levelUp();        		
+        	}
+        	return false;
+        }
+        
         if (commandWord.equalsIgnoreCase("fight")) {
         	if (currentRoom.getMonsterCount() == 0) {
         		System.out.println("There is no monster to fight!");
@@ -239,15 +247,24 @@ class Game implements Serializable
             else
                 return true;  // signal that we want to quit
         }
+        else if (commandWord.equalsIgnoreCase("Stats")) {
+        	player.checkStats();
+        }  
+        
         return false;
+       
     }
 
     private void printHelp() {
-		System.out.println("\nYou have several difference commands you can use to complete game:");
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.println("1. Go + \n    a. North  \n    b. South  \n    c. East  \n    d. West  \n    e. Up  \n    f. Down  \n    g. Open  \n    h. Look  \n    i. Back  \n    j. Beginning  \n    k. Read  \n2. Quit  \n3. Save  \n4. Load\n");
-		System.out.println("Find your way to the final level and defeat the final boss. Good luck.");
-		System.out.println();
+    		System.out.println("\nYou have several difference commands you can use to complete game:");
+    		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    		System.out.println("1. Go + \n    a. North  \n    b. South  \n    c. East  \n    d. West  \n    e. Up  \n    f. Down  \n    g. Open  \n    h. Look  \n    i. Back  \n    j. Beginning  \n    k. Read  \n2. Fight  \n3. Stats  \n4. Pick up  \n5. Save  \n6. Load  \n7. Quit\n");
+   			System.out.println("\nYou are in the headquarters of Evil Monster King. Each floor gets progressively harder with monsters wanting to kill you.");
+   			System.out.println("You must fight your way through and collect keys in order to get to the boss round on each floor. Along the way, you will find items ");
+   			System.out.println("such as potions, which will be stored in your limited inventory, and if you ever get lost, don't worry, just type \"go back\" to go back ");
+   			System.out.println("to your previous room or \" go beginning\" to go to the begining of the floor. ");
+    		System.out.println("Now... Find your way to the final level and defeat the final boss. Good luck, and may the odds be ever in your favor.");
+    		System.out.println();
 		
 	}
 

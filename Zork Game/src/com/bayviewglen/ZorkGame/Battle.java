@@ -89,8 +89,12 @@ public class Battle implements Serializable {
 				}
 				System.out.println("You successfully dealt " + 2 * (damage - monster.getArmor() * (1 - player.getArmorPenetration())) + " damage to the monster!");
 		}else{
-			monsterHP -= (damage - monster.getArmor() * (1 - player.getArmorPenetration()));
-			System.out.println("You successfully dealt " + (damage - monster.getArmor() * (1 - player.getArmorPenetration())) + " damage to the monster!");
+			if (damage - monster.getArmor() * (1 - player.getArmorPenetration()) < 0) {
+				System.out.println("Your attack can't even break through monster's armor!");
+			}else{
+				monsterHP -= (damage - monster.getArmor() * (1 - player.getArmorPenetration()));
+				System.out.println("You successfully dealt " + (damage - monster.getArmor() * (1 - player.getArmorPenetration())) + " damage to the monster!");
+			}
 		}
 		
 		if ((playerHP + damage * player.getLifeSteal()) >= player.getMaxHitPoint()) {
@@ -98,6 +102,7 @@ public class Battle implements Serializable {
 		}else{
 			playerHP += damage * player.getLifeSteal();
 		}
+		
 		if (monsterHP <= 0) {
 			victory();
 		}
@@ -105,8 +110,12 @@ public class Battle implements Serializable {
 		if (monsterHP > 0) {
 			// Monster deal damage to player
 			if (!dodge) {
-				playerHP -= (monster.getAttackDamage() - player.getArmor() * (1 - monster.getArmorPenetration()));
-				System.out.println("Monster dealt " + player.getArmor() * (1 - monster.getArmorPenetration()) + " damage");
+				if (monster.getAttackDamage() - player.getArmor() * (1 - monster.getArmorPenetration()) < 0) {
+					System.out.println("Monster's attack can't even break through your armor!");
+				}else{
+					playerHP -= (monster.getAttackDamage() - player.getArmor() * (1 - monster.getArmorPenetration()));
+					System.out.println("Monster dealt " + player.getArmor() * (1 - monster.getArmorPenetration()) + " damage");
+				}
 			}else{
 				System.out.println("You dodged the attack!");
 			}
@@ -181,6 +190,7 @@ public class Battle implements Serializable {
 				return 1;
 			}
 		}else if (x == -100) {
+			System.out.println("You used blue card! You dodged monster's next attack!");
 			return -1;
 		}else if (x == 0.2) {
 			System.out.println("You used Red Card! You dealt 20% enemy health as physical damage.");
