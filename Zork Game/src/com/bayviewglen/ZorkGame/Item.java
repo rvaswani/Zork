@@ -79,7 +79,7 @@ public class Item implements Serializable {
 			critChance = 0;
 			armor = 0;
 			movementSpeed = 0;
-			description = "Key";
+			description = "A universal key that opens any lock!";
 			weight = 1;
 			amount = 1;
 		}

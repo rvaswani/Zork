@@ -26,6 +26,7 @@ class Room implements Serializable
     private String description;
     private int monsterCount;					// Stores the amount of monsters in this room
     private int floor;							// Stores floor number
+    private int monsterIndicator;				// Stores index for creating monster
     private boolean key;						// Records if this room needs a key to gain access into
     private Item award;							// If the room is a final boss room of each floor, give player an award after beating the boss
     private HashMap<String, Room> exits;        // stores exits of this room.
@@ -209,5 +210,13 @@ class Room implements Serializable
 	
 	public Item getAward() {
 		return award;
+	}
+	
+	public int getMonsterIndicator() {
+		return monsterIndicator;
+	}
+	
+	public void setMonsterIndicator(int monsterIndicator) {
+		this.monsterIndicator = monsterIndicator;
 	}
 }

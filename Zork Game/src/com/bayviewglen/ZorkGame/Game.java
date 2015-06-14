@@ -57,7 +57,9 @@ class Game implements Serializable
 				room.setFloor(Integer.parseInt(roomName.substring(roomName.indexOf(".") - 2, roomName.indexOf(".")).trim()));
 				if (Integer.parseInt(roomName.substring(roomName.indexOf(".") + 1)) == 999) {
 					room.setKey(true);
-					room.setFloor(room.getFloor() + 2);
+					room.setMonsterIndicator(room.getFloor() * room.getFloor());	// Final boss exponentially stronger
+				}else{
+					room.setMonsterIndicator(room.getFloor());
 				}
 				// Read items in this room
 				String items = roomScanner.nextLine();
@@ -190,12 +192,13 @@ class Game implements Serializable
         	return false;
         }
         
+        // Command to start a battle with monster in room
         if (commandWord.equalsIgnoreCase("fight")) {
         	if (currentRoom.getMonsterCount() == 0) {
         		System.out.println("There is no monster to fight!");
         		return false;
         	}
-        	Monster monster = new Monster(currentRoom.getFloor());
+        	Monster monster = new Monster(currentRoom.getMonsterIndicator());
         	Battle battle = new Battle(player, monster);
         	battle.fight();
         	if (battle.getResult() == 1) {
@@ -310,7 +313,7 @@ class Game implements Serializable
     		System.out.println("\nYou have several difference commands you can use to complete game:");
     		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     		System.out.println("1. Go + \n    a. North  \n    b. South  \n    c. East  \n    d. West  \n    e. Up  \n    f. Down  \n    g. Open  \n    h. Look  \n    i. Back  \n    j. Beginning  \n    k. Read\n2. Fight  \n3. Stats  \n4. Pick up  \n5. Inventory + \n    a. Use  \n    b. Throw\n6. Save  \n7. Load  \n8. Quit\n");
-   			System.out.println("\nYou are in the headquarters of Evil Monster King. Each floor gets progressively harder with monsters wanting to kill you.");
+    		System.out.println("\nYou are in the headquarters of Evil Monster King. Each floor gets progressively harder with monsters wanting to kill you.");
    			System.out.println("You must fight your way through and collect keys in order to get to the boss round on each floor. Along the way, you will find items ");
    			System.out.println("such as potions, which will be stored in your limited inventory, and if you ever get lost, don't worry, just type \"go back\" to go back ");
    			System.out.println("to your previous room or \" go beginning\" to go to the begining of the floor. ");
@@ -371,7 +374,9 @@ class Game implements Serializable
         			currentRoom = nextRoom;
         			if (direction.equalsIgnoreCase("Up") || currentRoom.getRoomName().split("\\.")[1].substring(0).equals("1")) 
         				beginningRoom = nextRoom; 
-        			currentRoom = nextRoom;        			       		
+        			currentRoom = nextRoom;   
+        			if (currentRoom.getRoomName().equals("Room 1.2"))
+        				beginningRoom = lastRoom;
         			System.out.println(currentRoom.longDescription());
         		}
         	}
