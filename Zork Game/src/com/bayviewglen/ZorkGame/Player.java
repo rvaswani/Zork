@@ -31,7 +31,7 @@ public class Player implements Serializable {
 	public void printOptions(Scanner scanner) {
 		// Scanner input = new Scanner(System.in);
 		// input.reset();
-		System.out.println("Before you start the game, you have 3 characters to choose from: ");
+		System.out.println("\nBefore you start the game, you have 3 characters to choose from: ");
 		
 		System.out.println("1. Master Yi");
 		System.out.println("- Passive Ability \"Focus\": Attacks ignore 10% of enemy armor.");
@@ -245,7 +245,7 @@ public class Player implements Serializable {
 		System.out.println("Character Type: " + choice);
 		System.out.println("Level: " + level);
 		System.out.println("Exp: " + exp + "/" + level * 100);
-		System.out.println("/nHP: " + hitPoint + "/" + maxHitPoint);
+		System.out.println("HP: " + hitPoint + "/" + maxHitPoint);
 		System.out.println("Armor Penetration: " + armorPenetration + "%");
 		System.out.println("Life Steal: " + lifeSteal + "%");
 		System.out.println("Crit. Chance: " + critChance + "%");
@@ -353,6 +353,10 @@ public class Player implements Serializable {
 			armor -= i.getArmor();
 			movementSpeed -= i.getMovementSpeed();
 			inventorySpace += i.getWeight();
+			
+			System.out.println("You successfully throw your " + i.getName() + " away!");
+			inventory.remove(i.getName());
+			
 		}else{
 			if (!inventory.containsKey(i.getName())) {
 				System.out.println("You do not have this item!");

@@ -403,24 +403,24 @@ public class Item implements Serializable {
 		}
 		
 		if (hitPoint != 0) 
-			System.out.println("HP :" + hitPoint);
+			System.out.println("\tHP :" + hitPoint);
 		if (maxHitPoint != 0)
-			System.out.println("Max HP: " + maxHitPoint);
+			System.out.println("\tMax HP: " + maxHitPoint);
 		if (attackDamage != 0)
-			System.out.println("AD: " + attackDamage);
+			System.out.println("\tAD: " + attackDamage);
 		if (armorPenetration != 0)
-			System.out.println("Armor Penetration: " + armorPenetration);
+			System.out.println("\tArmor Penetration: " + armorPenetration);
 		if (lifeSteal != 0)
-			System.out.println("Life Steal: " + lifeSteal);
+			System.out.println("\tLife Steal: " + lifeSteal);
 		if (critChance != 0)
-			System.out.println("Critical Strike Chance: " + critChance);
+			System.out.println("\tCritical Strike Chance: " + critChance);
 		if (armor != 0)
-			System.out.println("Armor: " + armor);
+			System.out.println("\tArmor: " + armor);
 		if (movementSpeed != 0)
-			System.out.println("Movement Speed: " + movementSpeed);
-		System.out.println(description);
-		System.out.println("Weight: " + weight);
-		System.out.println("Amount: " + amount);	
+			System.out.println("\tMovement Speed: " + movementSpeed);
+		System.out.println("\tDescription: " + description);
+		System.out.println("\tWeight: " + weight);
+		System.out.println("\tAmount: " + amount);	
 	}
 	
 }

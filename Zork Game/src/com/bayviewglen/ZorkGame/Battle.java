@@ -40,6 +40,7 @@ public class Battle implements Serializable {
 			System.out.println("Monster HP: " + monsterHP);
 			
 			displayAbilities();
+			System.out.print("\n> ");
 			double damage = readInput();
 			if (damage == 0) {
 				escapeBattle();

@@ -202,6 +202,10 @@ class Game implements Serializable
         		currentRoom.setMonsterCount(currentRoom.getMonsterCount() - 1);
         		if (currentRoom.getAward() != null) {
         			int x = player.addItem(currentRoom.getAward(), 1);
+        			System.out.println("You got " + currentRoom.getAward().getName() + "!");
+        			System.out.println("");
+        			System.out.println(currentRoom.getAward().getDescription());
+        			System.out.println("");
         			if (x == 1) {
         				currentRoom.setAward(null);
         			}
@@ -250,7 +254,43 @@ class Game implements Serializable
         else if (commandWord.equalsIgnoreCase("go"))
             goRoom(command);
         else if (commandWord.equalsIgnoreCase("Inventory"))
-        	inventory(command);
+        {
+        	if (player.getInventory().isEmpty()) {
+            	System.out.println("You don't have anything in your inventory!");
+            }else{
+            	System.out.println("You have: ");
+            	for (String str : player.getInventory().keySet()) {
+            		System.out.println(player.getInventory().get(str).getName() + ":");
+            		player.getInventory().get(str).printAll();
+            	}
+            }
+        }
+        else if (commandWord.equalsIgnoreCase("use"))
+        {
+        	System.out.println("Use what? How many? (item name, amount)");
+        	Scanner input = new Scanner(System.in);
+        	try {
+        		String nextLine = input.nextLine();
+        		String name = nextLine.substring(0, nextLine.indexOf(","));
+        		int amount = Integer.parseInt(nextLine.substring(nextLine.indexOf(",") + 1).trim());
+        		player.useItem(player.getInventory().get(name), amount);
+        	}catch (ArrayIndexOutOfBoundsException ex) {
+        		System.out.println("Please enter in proper form (name, amount)");
+        	}
+        }
+        else if (commandWord.equalsIgnoreCase("throw"))
+        {
+        	System.out.println("Throw what? How many? (item name, amount)");
+        	Scanner input = new Scanner(System.in);
+        	try {
+        		String nextLine = input.nextLine();
+        		String name = nextLine.substring(0, nextLine.indexOf(","));
+        		int amount = Integer.parseInt(nextLine.substring(nextLine.indexOf(",") + 1).trim());
+        		player.throwAwayItem(player.getInventory().get(name), amount);
+        	}catch (ArrayIndexOutOfBoundsException ex) {
+        		System.out.println("Please enter in proper form (name, amount)");
+        	}
+        }
         else if (commandWord.equalsIgnoreCase("quit"))
         {
             if(command.hasSecondWord())
@@ -265,50 +305,6 @@ class Game implements Serializable
         return false;
        
     }
-
-    private void inventory(Command command) {
-    	if(!command.hasSecondWord())
-        {
-            // if there is no second word, we don't know what else player wants to do with inventory
-            System.out.println("You have: ");
-            for (String str : player.getInventory().keySet()) {
-            	System.out.println(player.getInventory().get(str).getName() + ":");
-            	player.getInventory().get(str).printAll();
-            }
-            
-            String action = command.getSecondWord();
-            if (action.equalsIgnoreCase("Use")) {
-            	System.out.println("Use what? How many? (item name, amount)");
-            	Scanner input = new Scanner(System.in);
-            	try {
-            		String nextLine = input.nextLine();
-            		String name = nextLine.substring(0, nextLine.indexOf(","));
-            		int amount = Integer.parseInt(nextLine.substring(nextLine.indexOf(",") + 1).trim());
-            		player.useItem(player.getInventory().get(name), amount);
-            	}catch (ArrayIndexOutOfBoundsException ex) {
-            		System.out.println("Please enter in proper form (name, amount)");
-            	}
-            	return;
-            } else if (action.equalsIgnoreCase("Throw")) {
-            	System.out.println("Throw what? How many? (item name, amount)");
-            	Scanner input = new Scanner(System.in);
-            	try {
-            		String nextLine = input.nextLine();
-            		String name = nextLine.substring(0, nextLine.indexOf(","));
-            		int amount = Integer.parseInt(nextLine.substring(nextLine.indexOf(",") + 1).trim());
-            		player.throwAwayItem(player.getInventory().get(name), amount);
-            	}catch (ArrayIndexOutOfBoundsException ex) {
-            		System.out.println("Please enter in proper form (name, amount)");
-            	}
-            	return;
-            } else {
-            	System.out.println("Please enter proper action!");
-            	return;
-            }
-
-        }
-		
-	}
 
 	private void printHelp() {
     		System.out.println("\nYou have several difference commands you can use to complete game:");
